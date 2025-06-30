@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "question": "Would you rather start a conga line or organize a group selfie?",
+      "optionA": "Start a conga line",
+      "categoryA": "adventurer",
+      "optionB": "Organize a group selfie",
+      "categoryB": "creative"
+    },
+    {
+      "question": "Would you rather stay in pajamas all night or dance until sunrise?",
+      "optionA": "Stay in pajamas all night",
+      "categoryA": "homebody",
+      "optionB": "Dance until sunrise",
+      "categoryB": "adventurer"
+    },
+    {
+      "question": "Would you rather invent a new party game or explain the rules to everyone?",
+      "optionA": "Invent a new party game",
+      "categoryA": "creative",
+      "optionB": "Explain the rules to everyone",
+      "categoryB": "thinker"
+    }
+  ]
+} 
