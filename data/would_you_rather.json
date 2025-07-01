@@ -1,25 +1,124 @@
 {
-  "questions": [
+  "categories": [
     {
-      "question": "Would you rather start a conga line or organize a group selfie?",
-      "optionA": "Start a conga line",
-      "categoryA": "adventurer",
-      "optionB": "Organize a group selfie",
-      "categoryB": "creative"
+      "id": "everyday_life",
+      "name": "Everyday Life",
+      "color": "#60a5fa",
+      "questions": [
+        {"question": "Would you rather wake up early every day or never have to sleep?", "optionA": "Wake up early", "categoryA": "thinker", "optionB": "Never sleep", "categoryB": "adventurer"},
+        {"question": "Would you rather always have to do the dishes or always take out the trash?", "optionA": "Do the dishes", "categoryA": "homebody", "optionB": "Take out the trash", "categoryB": "adventurer"},
+        {"question": "Would you rather never use a smartphone again or never watch TV again?", "optionA": "No smartphone", "categoryA": "thinker", "optionB": "No TV", "categoryB": "creative"},
+        {"question": "Would you rather always be 10 minutes late or 20 minutes early?", "optionA": "10 minutes late", "categoryA": "creative", "optionB": "20 minutes early", "categoryB": "thinker"},
+        {"question": "Would you rather have to sing everything you say or dance everywhere you go?", "optionA": "Sing everything", "categoryA": "creative", "optionB": "Dance everywhere", "categoryB": "adventurer"}
+      ]
     },
     {
-      "question": "Would you rather stay in pajamas all night or dance until sunrise?",
-      "optionA": "Stay in pajamas all night",
-      "categoryA": "homebody",
-      "optionB": "Dance until sunrise",
-      "categoryB": "adventurer"
+      "id": "food_drink",
+      "name": "Food & Drink",
+      "color": "#fbbf24",
+      "questions": [
+        {"question": "Would you rather eat only pizza for a week or only burgers for a week?", "optionA": "Pizza", "categoryA": "creative", "optionB": "Burgers", "categoryB": "homebody"},
+        {"question": "Would you rather never eat chocolate again or never drink coffee again?", "optionA": "No chocolate", "categoryA": "thinker", "optionB": "No coffee", "categoryB": "adventurer"},
+        {"question": "Would you rather always have to eat spicy food or always eat bland food?", "optionA": "Spicy food", "categoryA": "adventurer", "optionB": "Bland food", "categoryB": "homebody"},
+        {"question": "Would you rather give up snacks or give up desserts?", "optionA": "No snacks", "categoryA": "thinker", "optionB": "No desserts", "categoryB": "creative"},
+        {"question": "Would you rather drink only water or only soda for the rest of your life?", "optionA": "Only water", "categoryA": "thinker", "optionB": "Only soda", "categoryB": "creative"}
+      ]
     },
     {
-      "question": "Would you rather invent a new party game or explain the rules to everyone?",
-      "optionA": "Invent a new party game",
-      "categoryA": "creative",
-      "optionB": "Explain the rules to everyone",
-      "categoryB": "thinker"
+      "id": "party_mode",
+      "name": "Party Mode",
+      "color": "#f472b6",
+      "questions": [
+        {"question": "Would you rather start a conga line or organize a group selfie?", "optionA": "Start a conga line", "categoryA": "adventurer", "optionB": "Group selfie", "categoryB": "creative"},
+        {"question": "Would you rather wear a silly hat all night or sing karaoke solo?", "optionA": "Silly hat", "categoryA": "creative", "optionB": "Karaoke solo", "categoryB": "adventurer"},
+        {"question": "Would you rather dance with everyone or tell a joke to the whole group?", "optionA": "Dance with everyone", "categoryA": "adventurer", "optionB": "Tell a joke", "categoryB": "creative"},
+        {"question": "Would you rather play charades or play truth or dare?", "optionA": "Charades", "categoryA": "creative", "optionB": "Truth or dare", "categoryB": "adventurer"},
+        {"question": "Would you rather spill your drink or drop your snack at a party?", "optionA": "Spill drink", "categoryA": "thinker", "optionB": "Drop snack", "categoryB": "homebody"}
+      ]
+    },
+    {
+      "id": "deep_personal",
+      "name": "Deep & Personal",
+      "color": "#a78bfa",
+      "questions": [
+        {"question": "Would you rather always tell the truth or always have to lie?", "optionA": "Always tell the truth", "categoryA": "thinker", "optionB": "Always lie", "categoryB": "creative"},
+        {"question": "Would you rather forget your best memory or never make new ones?", "optionA": "Forget best memory", "categoryA": "homebody", "optionB": "Never make new ones", "categoryB": "thinker"},
+        {"question": "Would you rather be loved by everyone or feared by everyone?", "optionA": "Loved", "categoryA": "creative", "optionB": "Feared", "categoryB": "thinker"},
+        {"question": "Would you rather always be alone or always be surrounded by people?", "optionA": "Always alone", "categoryA": "thinker", "optionB": "Always with people", "categoryB": "adventurer"},
+        {"question": "Would you rather never feel sadness or never feel anger?", "optionA": "No sadness", "categoryA": "homebody", "optionB": "No anger", "categoryB": "creative"}
+      ]
+    },
+    {
+      "id": "hard_choices",
+      "name": "Hard Choices",
+      "color": "#f87171",
+      "questions": [
+        {"question": "Would you rather save one loved one or 100 strangers?", "optionA": "One loved one", "categoryA": "homebody", "optionB": "100 strangers", "categoryB": "thinker"},
+        {"question": "Would you rather never be able to speak again or never be able to hear again?", "optionA": "Never speak", "categoryA": "thinker", "optionB": "Never hear", "categoryB": "creative"},
+        {"question": "Would you rather lose all your money or all your memories?", "optionA": "Lose money", "categoryA": "adventurer", "optionB": "Lose memories", "categoryB": "homebody"},
+        {"question": "Would you rather always have to say what you think or never speak again?", "optionA": "Say what you think", "categoryA": "creative", "optionB": "Never speak", "categoryB": "thinker"},
+        {"question": "Would you rather have to choose between your dream job or true love?", "optionA": "Dream job", "categoryA": "thinker", "optionB": "True love", "categoryB": "homebody"}
+      ]
+    },
+    {
+      "id": "jobs_money",
+      "name": "Jobs & Money",
+      "color": "#34d399",
+      "questions": [
+        {"question": "Would you rather have a high-paying job you hate or a low-paying job you love?", "optionA": "High-paying, hate", "categoryA": "thinker", "optionB": "Low-paying, love", "categoryB": "creative"},
+        {"question": "Would you rather win the lottery or work your dream job?", "optionA": "Win lottery", "categoryA": "adventurer", "optionB": "Dream job", "categoryB": "thinker"},
+        {"question": "Would you rather never get a raise or never get a promotion?", "optionA": "No raise", "categoryA": "homebody", "optionB": "No promotion", "categoryB": "thinker"},
+        {"question": "Would you rather work from home forever or always work in an office?", "optionA": "Work from home", "categoryA": "homebody", "optionB": "Office", "categoryB": "adventurer"},
+        {"question": "Would you rather be your own boss or have the best boss ever?", "optionA": "Own boss", "categoryA": "adventurer", "optionB": "Best boss", "categoryB": "thinker"}
+      ]
+    },
+    {
+      "id": "kids_family",
+      "name": "Kids & Family",
+      "color": "#fcd34d",
+      "questions": [
+        {"question": "Would you rather have a pet dinosaur or a pet dragon?", "optionA": "Dinosaur", "categoryA": "adventurer", "optionB": "Dragon", "categoryB": "creative"},
+        {"question": "Would you rather eat only ice cream or only pizza for a week?", "optionA": "Ice cream", "categoryA": "homebody", "optionB": "Pizza", "categoryB": "creative"},
+        {"question": "Would you rather be able to fly or be invisible?", "optionA": "Fly", "categoryA": "adventurer", "optionB": "Invisible", "categoryB": "thinker"},
+        {"question": "Would you rather never have homework or never have chores?", "optionA": "No homework", "categoryA": "creative", "optionB": "No chores", "categoryB": "homebody"},
+        {"question": "Would you rather have a new toy every day or a new friend every week?", "optionA": "New toy", "categoryA": "homebody", "optionB": "New friend", "categoryB": "adventurer"}
+      ]
+    },
+    {
+      "id": "work_flow",
+      "name": "Work Flow",
+      "color": "#38bdf8",
+      "questions": [
+        {"question": "Would you rather always agree with your boss or always disagree?", "optionA": "Always agree", "categoryA": "thinker", "optionB": "Always disagree", "categoryB": "adventurer"},
+        {"question": "Would you rather have unlimited coffee at work or unlimited snacks?", "optionA": "Unlimited coffee", "categoryA": "creative", "optionB": "Unlimited snacks", "categoryB": "homebody"},
+        {"question": "Would you rather have meetings all day or emails all day?", "optionA": "Meetings", "categoryA": "adventurer", "optionB": "Emails", "categoryB": "thinker"},
+        {"question": "Would you rather be the manager or the employee?", "optionA": "Manager", "categoryA": "thinker", "optionB": "Employee", "categoryB": "creative"},
+        {"question": "Would you rather have a 4-day work week or work from anywhere?", "optionA": "4-day week", "categoryA": "homebody", "optionB": "Work from anywhere", "categoryB": "adventurer"}
+      ]
+    },
+    {
+      "id": "this_or_that",
+      "name": "This or That",
+      "color": "#f59e42",
+      "questions": [
+        {"question": "Would you rather cats or dogs?", "optionA": "Cats", "categoryA": "homebody", "optionB": "Dogs", "categoryB": "adventurer"},
+        {"question": "Would you rather summer or winter?", "optionA": "Summer", "categoryA": "adventurer", "optionB": "Winter", "categoryB": "homebody"},
+        {"question": "Would you rather coffee or tea?", "optionA": "Coffee", "categoryA": "thinker", "optionB": "Tea", "categoryB": "creative"},
+        {"question": "Would you rather sweet or salty snacks?", "optionA": "Sweet", "categoryA": "creative", "optionB": "Salty", "categoryB": "homebody"},
+        {"question": "Would you rather books or movies?", "optionA": "Books", "categoryA": "thinker", "optionB": "Movies", "categoryB": "creative"}
+      ]
+    },
+    {
+      "id": "animals_nature",
+      "name": "Animals & Nature",
+      "color": "#4ade80",
+      "questions": [
+        {"question": "Would you rather swim with dolphins or go on a safari?", "optionA": "Swim with dolphins", "categoryA": "adventurer", "optionB": "Safari", "categoryB": "creative"},
+        {"question": "Would you rather have a pet tiger or a pet elephant?", "optionA": "Tiger", "categoryA": "adventurer", "optionB": "Elephant", "categoryB": "homebody"},
+        {"question": "Would you rather climb a mountain or explore a forest?", "optionA": "Climb mountain", "categoryA": "adventurer", "optionB": "Explore forest", "categoryB": "thinker"},
+        {"question": "Would you rather watch birds or watch fish?", "optionA": "Birds", "categoryA": "creative", "optionB": "Fish", "categoryB": "homebody"},
+        {"question": "Would you rather save the bees or save the whales?", "optionA": "Save bees", "categoryA": "thinker", "optionB": "Save whales", "categoryB": "creative"}
+      ]
     }
   ]
 } 

@@ -1,15 +1,21 @@
-export function initWouldYouRather(container) {
-    // Ukryj przycisk w menu
-    const btn = document.getElementById('would-you-rather-btn');
+export function initWouldYouRather(container, categoryId) {
+    // Usuwam czyszczenie tytułu i przycisków kategorii na starcie
+    // const titleContainer = document.getElementById('game-title-container');
+    // if (titleContainer) titleContainer.innerHTML = '';
     const titleContainer = document.getElementById('game-title-container');
-    if (btn) btn.style.display = 'none';
-    if (titleContainer) titleContainer.innerHTML = '<h2 id="summary-title" style="margin:0;">Would you rather?</h2>';
 
-    container.innerHTML = '<div id="wyr-question"></div><div id="wyr-buttons"></div><div id="wyr-progress"></div><div id="wyr-nav"></div>';
     fetch('./data/would_you_rather.json')
         .then(response => response.json())
         .then(data => {
-            let questions = shuffle([...data.questions]);
+            const categories = data.categories;
+            const category = categories.find(cat => cat.id === categoryId);
+            if (!category) {
+                container.innerHTML = '<p>Category not found.</p>';
+                return;
+            }
+            // Usuwam tytuł i przyciski kategorii dopiero po wybraniu kategorii
+            if (titleContainer) titleContainer.innerHTML = '';
+            let questions = shuffle([...category.questions]);
             let current = 0;
             let answers = [];
             let stats = { optionA: 0, optionB: 0 };
@@ -20,6 +26,8 @@ export function initWouldYouRather(container) {
                 creative: "You see a napkin and immediately want to make origami. Karaoke? You're already on stage!",
                 thinker: "You're the one who reads the game rules out loud. Twice. And then wins anyway."
             };
+
+            container.innerHTML = '<div id="wyr-question"></div><div id="wyr-buttons"></div><div id="wyr-progress"></div><div id="wyr-nav"></div>';
 
             function shuffle(arr) {
                 for (let i = arr.length - 1; i > 0; i--) {
@@ -121,15 +129,14 @@ export function initWouldYouRather(container) {
                         <div style="margin-bottom:1.2em;font-size:1.1em;text-align:center;max-width:350px;">${personality}</div>
                         <button id="wyr-share" class="option-a" style="margin-bottom:0.7em;">Share your result</button>
                         <button id="wyr-restart" class="option-b">Play again</button>
+                        <button id="wyr-back-categories" class="option-a" style="margin-top:1.2em;">Back to categories</button>
                     </div>
                 `;
                 document.getElementById('wyr-share').onclick = shareResult;
-                document.getElementById('wyr-restart').onclick = () => {
-                    if (btn) btn.style.display = '';
-                    if (titleContainer) titleContainer.innerHTML = '<button id="would-you-rather-btn">Would you rather?</button>';
-                    const newBtn = document.getElementById('would-you-rather-btn');
-                    if (newBtn) newBtn.onclick = () => initWouldYouRather(container);
-                    container.innerHTML = '';
+                document.getElementById('wyr-restart').onclick = () => initWouldYouRather(container, categoryId);
+                document.getElementById('wyr-back-categories').onclick = () => {
+                    if (titleContainer) titleContainer.innerHTML = '<h2 id="main-title" style="margin:0;">Would you rather?</h2>';
+                    window.showCategories();
                 };
             }
 
