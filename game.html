@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Would You Rather - Make impossible choices and discover your personality type!">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Would You Rather? - PartyBoard</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+    <!-- <link rel="manifest" href="manifest.json"> -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <a href="index.html" class="back-button" aria-label="Back to home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </a>
+            <div class="game-info">
+                <h1 class="game-name">Would You Rather?</h1>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Category Selection Screen -->
+        <div id="category-screen" class="screen active">
+            <div class="screen-content">
+                <h2 class="screen-title">Choose Your Category</h2>
+                <p class="screen-subtitle">Pick a theme and discover your personality type!</p>
+                
+                <div class="categories-grid">
+                    <button class="category-card" data-category="survival">
+                        <span class="category-icon">🏜️</span>
+                        <h3 class="category-name">Survival</h3>
+                        <p class="category-desc">Test your survival instincts</p>
+                    </button>
+                    
+                    <button class="category-card" data-category="social">
+                        <span class="category-icon">🎉</span>
+                        <h3 class="category-name">Social</h3>
+                        <p class="category-desc">Party and social scenarios</p>
+                    </button>
+                    
+                    <button class="category-card" data-category="food">
+                        <span class="category-icon">🍕</span>
+                        <h3 class="category-name">Food & Lifestyle</h3>
+                        <p class="category-desc">Tasty choices and living preferences</p>
+                    </button>
+                    
+                    <button class="category-card" data-category="travel">
+                        <span class="category-icon">✈️</span>
+                        <h3 class="category-name">Travel & Adventure</h3>
+                        <p class="category-desc">Explore your adventurous side</p>
+                    </button>
+                    
+                    <button class="category-card" data-category="tech">
+                        <span class="category-icon">🤖</span>
+                        <h3 class="category-name">Tech & Future</h3>
+                        <p class="category-desc">Tomorrow's world choices</p>
+                    </button>
+                    
+                    <button class="category-card" data-category="random">
+                        <span class="category-icon">🎲</span>
+                        <h3 class="category-name">Random Fun</h3>
+                        <p class="category-desc">Wild and wacky scenarios</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="question-screen" class="screen">
+            <div class="screen-content">
+                <div class="question-header">
+                    <span class="question-number" id="question-number">Question 1 of 10</span>
+                    <button class="skip-button" id="skip-button">Skip</button>
+                </div>
+                
+                <h2 class="question-title">Would You Rather...</h2>
+                
+                <div class="choices-container">
+                    <button class="choice-card choice-a" data-choice="A">
+                        <div class="choice-letter">A</div>
+                        <p class="choice-text" id="choice-a-text"></p>
+                    </button>
+                    
+                    <div class="or-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <button class="choice-card choice-b" data-choice="B">
+                        <div class="choice-letter">B</div>
+                        <p class="choice-text" id="choice-b-text"></p>
+                    </button>
+                </div>
+                
+                <div class="question-navigation">
+                    <button class="nav-button" id="prev-button" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                        Previous
+                    </button>
+                    <button class="nav-button" id="categories-button">
+                        Categories
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="screen-content results-content">
+                <div class="results-animation">
+                    <div class="confetti"></div>
+                </div>
+                
+                <h2 class="results-title">Your Personality Type:</h2>
+                
+                <div class="personality-card">
+                    <div class="personality-icon" id="personality-icon">🏜️</div>
+                    <h3 class="personality-type" id="personality-type">Desert Wanderer</h3>
+                    <p class="personality-description" id="personality-description">
+                        You're a true survivor who thrives in challenging conditions. 
+                        Your independent spirit and resourcefulness make you the perfect 
+                        companion for any adventure. While others panic, you stay cool as a cactus!
+                    </p>
+                </div>
+                
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Questions Answered</span>
+                        <span class="stat-value" id="questions-answered">10</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Most Common Choice</span>
+                        <span class="stat-value" id="common-choice">Option A</span>
+                    </div>
+                </div>
+                
+                <div class="results-actions">
+                    <button class="btn btn-primary" id="share-button">
+                        Share Your Result
+                    </button>
+                    <button class="btn btn-secondary" id="play-again-button">
+                        Play Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/analytics.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

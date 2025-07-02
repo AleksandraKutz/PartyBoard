@@ -3,29 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Party Board</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="PartyBoard - Every Party Starts Here! Fun party games for groups.">
+    <meta name="theme-color" content="#000000">
+    
+    <title>PartyBoard - Every Party Starts Here!</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="manifest" href="manifest.json"> -->
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Party Board</h1>
-    </header>
-    <main>
-        <nav id="game-menu">
-            <div id="game-title-container">
-                <h2 id="main-title" style="margin:0;">Would you rather?</h2>
+    <!-- Disclaimer Modal -->
+    <div id="disclaimer-modal" class="modal">
+        <div class="modal-content">
+            <h2>⚠️ IMPORTANT NOTICE</h2>
+            <p>This app is for entertainment purposes only. By playing, you accept our Terms of Service and acknowledge:</p>
+            <ul>
+                <li>You participate voluntarily at your own risk</li>
+                <li>Skip any content you're uncomfortable with</li>
+                <li>PartyBoard is not liable for your actions</li>
+                <li>You must be 13+ to play (18+ for adult content)</li>
+            </ul>
+            <label class="checkbox-container">
+                <input type="checkbox" id="disclaimer-accept">
+                <span>I understand and agree</span>
+            </label>
+            <button id="disclaimer-continue" class="btn btn-primary" disabled>Continue to PartyBoard</button>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app" class="app-container hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-container">
+                <h1 class="logo">PartyBoard</h1>
+                <p class="tagline">Every Party Starts Here!</p>
             </div>
-        </nav>
-        <section id="category-container">
-            <!-- Kategorie będą tu renderowane przez JS -->
-        </section>
-        <section id="game-container">
-            <!-- Tutaj będzie ładowana gra -->
-        </section>
-    </main>
-    <footer>
-        <small>&copy; 2024 Party Board</small>
-    </footer>
-    <script type="module" src="main.js"></script>
+            <div class="header-stats">
+                <span class="live-counter">🔥 <span id="player-count">2,847</span> playing now</span>
+            </div>
+        </header>
+
+        <!-- Games Grid -->
+        <main class="games-container">
+            <h2 class="section-title">Choose Your Game</h2>
+            
+            <div class="games-grid">
+                <!-- Would You Rather -->
+                <button class="game-card" data-game="would-you-rather" onclick="window.location.href='game.html?game=would-you-rather'">
+                    <div class="game-icon">🤔</div>
+                    <h3 class="game-title">Would You Rather?</h3>
+                    <p class="game-description">Make impossible choices and discover your personality type!</p>
+                    <div class="game-stats">
+                        <span class="player-count">👥 12.5k players today</span>
+                        <span class="game-badge">FREE</span>
+                    </div>
+                </button>
+
+                <!-- Truth or Dare (Coming Soon) -->
+                <button class="game-card coming-soon" disabled>
+                    <div class="game-icon">🎭</div>
+                    <h3 class="game-title">Truth or Dare</h3>
+                    <p class="game-description">Classic party game with a modern twist!</p>
+                    <div class="game-stats">
+                        <span class="game-badge">COMING SOON</span>
+                    </div>
+                </button>
+
+                <!-- Who's Most Likely To (Coming Soon) -->
+                <button class="game-card coming-soon" disabled>
+                    <div class="game-icon">🎯</div>
+                    <h3 class="game-title">Who's Most Likely To?</h3>
+                    <p class="game-description">Find out what your friends really think!</p>
+                    <div class="game-stats">
+                        <span class="game-badge">COMING SOON</span>
+                    </div>
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="legal/terms.html">Terms of Service</a>
+                <a href="legal/privacy.html">Privacy Policy</a>
+                <a href="#" id="contact-link">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2024 PartyBoard. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/analytics.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Emergency Disclaimer Fix -->
+    <script>
+    // AWARYJNE ROZWIĄZANIE - bezpośrednio w HTML
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Emergency fix loading...');
+        
+        // Poczekaj chwilę aż wszystko się załaduje
+        setTimeout(function() {
+            const checkbox = document.getElementById('disclaimer-accept');
+            const button = document.getElementById('disclaimer-continue');
+            
+            if (checkbox && button) {
+                console.log('Found elements:', checkbox, button);
+                
+                // Funkcja do sprawdzenia stanu
+                function updateButton() {
+                    button.disabled = !checkbox.checked;
+                    console.log('Checkbox checked:', checkbox.checked, 'Button disabled:', button.disabled);
+                }
+                
+                // Sprawdź na różne sposoby
+                checkbox.onclick = updateButton;
+                checkbox.onchange = updateButton;
+                
+                // Dodaj też standardowy event listener
+                checkbox.addEventListener('change', updateButton, true);
+                checkbox.addEventListener('click', updateButton, true);
+                
+                // Sprawdź początkowy stan
+                updateButton();
+                
+                // Obsługa kliknięcia przycisku
+                button.addEventListener('click', function() {
+                    if (checkbox.checked && !button.disabled) {
+                        console.log('Button clicked - proceeding...');
+                        localStorage.setItem('partyboard_disclaimer_accepted', 'true');
+                        document.getElementById('disclaimer-modal').style.display = 'none';
+                        document.getElementById('app').classList.remove('hidden');
+                    }
+                });
+            } else {
+                console.error('Elements not found!');
+            }
+        }, 500);
+    });
+    </script>
 </body>
 </html>
