@@ -127,8 +127,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, emergency fix executing...');
         
-        // Sprawdź czy disclaimer już został zaakceptowany
-        const disclaimerAccepted = localStorage.getItem('partyboard_disclaimer_accepted');
+        // Clean up old localStorage if exists
+        if (localStorage.getItem('partyboard_disclaimer_accepted')) {
+            localStorage.removeItem('partyboard_disclaimer_accepted');
+        }
+        
+        // Sprawdź czy disclaimer już został zaakceptowany W TEJ SESJI
+        const disclaimerAccepted = sessionStorage.getItem('partyboard_disclaimer_accepted');
         
         if (disclaimerAccepted === 'true') {
             // Jeśli już zaakceptowany, pokaż aplikację
@@ -171,7 +176,7 @@
                 button.addEventListener('click', function() {
                     if (checkbox.checked && !button.disabled) {
                         console.log('Button clicked - proceeding...');
-                        localStorage.setItem('partyboard_disclaimer_accepted', 'true');
+                        sessionStorage.setItem('partyboard_disclaimer_accepted', 'true');
                         document.getElementById('disclaimer-modal').style.display = 'none';
                         document.getElementById('app').classList.remove('hidden');
                         

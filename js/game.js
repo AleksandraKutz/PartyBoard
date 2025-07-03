@@ -148,6 +148,15 @@ class WouldYouRatherGame {
         }
     }
     
+    shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+    
     startGame(category) {
         this.currentCategory = category;
         this.currentQuestionIndex = 0;
@@ -155,7 +164,16 @@ class WouldYouRatherGame {
         
         // Load questions for this category
         if (window.WouldYouRatherData && window.WouldYouRatherData.questions[category]) {
-            this.questions = window.WouldYouRatherData.questions[category];
+            const allQuestions = window.WouldYouRatherData.questions[category];
+            
+            // For categories with more than 10 questions, select random 10
+            if (allQuestions.length > 10) {
+                this.questions = this.shuffleArray(allQuestions).slice(0, 10);
+                console.log(`Selected 10 random questions from ${allQuestions.length} available`);
+            } else {
+                this.questions = allQuestions;
+            }
+            
             console.log('Loaded questions for category:', category, this.questions);
         } else {
             console.error('Questions not found for category:', category);

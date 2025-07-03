@@ -2,522 +2,612 @@
 console.log('Loading questions.js...');
 
 const QUESTIONS_DB = {
-    survival: [
+    survival_mode: [
         {
             id: 'surv_1',
-            optionA: 'Live in the Sahara Desert for a year with unlimited water',
-            optionB: 'Live in Antarctica for a year with unlimited food',
-            typePoints: { desert: 2, arctic: 0, jungle: 0, urban: 0 }
+            optionA: 'Save yourself with 100% certainty',
+            optionB: 'Risk 50/50 chance to save yourself and others',
+            typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 2 }
         },
         {
             id: 'surv_2',
-            optionA: 'Fight one horse-sized duck',
-            optionB: 'Fight 100 duck-sized horses',
-            typePoints: { desert: 0, arctic: 0, jungle: 1, urban: 1 }
+            optionA: 'Survive with people you don\'t trust',
+            optionB: 'Survive alone with helpful hallucinations',
+            typePoints: { cactus_hugger: -1, polar_bear_mode: 1, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_3',
-            optionA: 'Be stranded on a deserted island alone',
-            optionB: 'Be stranded in a crowded city where you don\'t speak the language',
-            typePoints: { desert: 1, arctic: 0, jungle: 1, urban: -1 }
+            optionA: 'Have a radio that only receives messages',
+            optionB: 'Have one that only sends but never know if anyone hears',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: -1, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_4',
-            optionA: 'Have to hunt for all your food',
-            optionB: 'Have to grow all your food',
-            typePoints: { desert: 0, arctic: 1, jungle: 1, urban: -1 }
+            optionA: 'Be the leader everyone blames when things go wrong',
+            optionB: 'Be the follower who knows better but can\'t speak up',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: 2, concrete_survivor: -1 }
         },
         {
             id: 'surv_5',
-            optionA: 'Live in a treehouse in the rainforest',
-            optionB: 'Live in an underground bunker in the city',
-            typePoints: { desert: 0, arctic: 0, jungle: 2, urban: -1 }
+            optionA: 'Know which of your group won\'t make it',
+            optionB: 'Believe everyone has equal chances',
+            typePoints: { cactus_hugger: 2, polar_bear_mode: -1, jungle_vip: 0, concrete_survivor: 1 }
         },
         {
             id: 'surv_6',
-            optionA: 'Navigate by the stars with no technology',
-            optionB: 'Have GPS but no other modern tools',
-            typePoints: { desert: 1, arctic: 1, jungle: 0, urban: -1 }
+            optionA: 'Trust a stranger who claims to know the way out',
+            optionB: 'Stay in familiar danger',
+            typePoints: { cactus_hugger: -1, polar_bear_mode: 0, jungle_vip: 2, concrete_survivor: -1 }
         },
         {
             id: 'surv_7',
-            optionA: 'Survive a zombie apocalypse in a rural area',
-            optionB: 'Survive a zombie apocalypse in a metropolitan area',
-            typePoints: { desert: 0, arctic: 0, jungle: 0, urban: 2 }
+            optionA: 'Tell a seriously injured person the truth about their chances',
+            optionB: 'Let them hope until the end',
+            typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_8',
-            optionA: 'Live without electricity for a year',
-            optionB: 'Live without running water for a year',
-            typePoints: { desert: 1, arctic: 0, jungle: 1, urban: -2 }
+            optionA: 'Hear the thoughts of your survival group',
+            optionB: 'Have them hear yours',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 1, jungle_vip: -1, concrete_survivor: 0 }
         },
         {
             id: 'surv_9',
-            optionA: 'Be an expert at finding water in any environment',
-            optionB: 'Be an expert at building shelter in any environment',
-            typePoints: { desert: 2, arctic: -1, jungle: 0, urban: 0 }
+            optionA: 'Endure constant 40°C heat with shade',
+            optionB: 'Endure -20°C cold with shelter materials',
+            typePoints: { cactus_hugger: 2, polar_bear_mode: -2, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_10',
-            optionA: 'Face extreme heat every day',
-            optionB: 'Face extreme cold every day',
-            typePoints: { desert: 2, arctic: -2, jungle: 0, urban: 0 }
+            optionA: 'Live where edible plants are abundant but all animals are predators',
+            optionB: 'Live where animals are harmless but vegetation is 90% toxic',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: 1, concrete_survivor: -1 }
+        },
+        {
+            id: 'surv_11',
+            optionA: 'Live where rain falls when you\'re sad and sun shines when happy',
+            optionB: 'Live where your energy level controls the temperature around you',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 1, jungle_vip: 0, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_12',
+            optionA: 'Face nature that warns you 10 minutes before disasters but they\'re 3x stronger',
+            optionB: 'Face normal disasters with no warning',
+            typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
+        },
+        {
+            id: 'surv_13',
+            optionA: 'Survive where storms last 5 minutes but happen hourly',
+            optionB: 'Survive where they last a week but come once a month',
+            typePoints: { cactus_hugger: -1, polar_bear_mode: 1, jungle_vip: 1, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_14',
+            optionA: 'Survive solo with all supplies you need',
+            optionB: 'Survive with a group but constant resource shortage',
+            typePoints: { cactus_hugger: 2, polar_bear_mode: -1, jungle_vip: -2, concrete_survivor: 1 }
+        },
+        {
+            id: 'surv_15',
+            optionA: 'Survive a toxic disaster where you\'re immune but a carrier',
+            optionB: 'Be vulnerable but can\'t spread it',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
+        },
+        {
+            id: 'surv_16',
+            optionA: 'Share your only map with group',
+            optionB: 'Memorize it and destroy so no one can take it',
+            typePoints: { cactus_hugger: -1, polar_bear_mode: 0, jungle_vip: 1, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_17',
+            optionA: 'Recover from any injury overnight but feel intense pain',
+            optionB: 'Heal slowly but feel no pain warnings',
+            typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: 0, concrete_survivor: -1 }
+        },
+        {
+            id: 'surv_18',
+            optionA: 'Maintain perfect health but age twice as fast',
+            optionB: 'Age normally but get sick easily',
+            typePoints: { cactus_hugger: 1, polar_bear_mode: -1, jungle_vip: 0, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_19',
+            optionA: 'Remember survival skills perfectly but forget your past',
+            optionB: 'Keep memories but skills fade daily',
+            typePoints: { cactus_hugger: 2, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_20',
+            optionA: 'Master any one survival skill perfectly but forget all others',
+            optionB: 'Be moderately good at all survival skills',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 2 }
+        },
+        {
+            id: 'surv_21',
+            optionA: 'Face predictable natural disasters monthly',
+            optionB: 'Face random accidents weekly',
+            typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
+        },
+        {
+            id: 'surv_22',
+            optionA: 'Know medicine for any illness but ingredients are always 100 miles away',
+            optionB: 'Have remedies nearby but guess usage',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: -1, jungle_vip: 1, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_23',
+            optionA: 'Your presence calms wild animals but attracts insects',
+            optionB: 'Repel all bugs but make animals aggressive',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: 2, concrete_survivor: -1 }
+        },
+        {
+            id: 'surv_24',
+            optionA: 'Burn irreplaceable shelter for warmth in deadly cold',
+            optionB: 'Risk hypothermia to keep it',
+            typePoints: { cactus_hugger: -1, polar_bear_mode: 2, jungle_vip: 0, concrete_survivor: 0 }
+        },
+        {
+            id: 'surv_25',
+            optionA: 'Eat questionable food now while strong',
+            optionB: 'Save it for when you\'re desperate but weaker',
+            typePoints: { cactus_hugger: 0, polar_bear_mode: 1, jungle_vip: 1, concrete_survivor: -1 }
         }
     ],
     
-    social: [
+    social_life: [
         {
             id: 'soc_1',
             optionA: 'Always be the life of the party',
             optionB: 'Always be the mysterious guest',
-            typePoints: { party_animal: 2, introvert: -2, butterfly: 1, lone_wolf: 0 }
+            typePoints: { disco_disaster: 2, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
         },
         {
             id: 'soc_2',
             optionA: 'Host a party for 100 strangers',
             optionB: 'Have a deep conversation with one interesting person',
-            typePoints: { party_animal: 1, introvert: -2, butterfly: 1, lone_wolf: 0 }
+            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
         },
         {
             id: 'soc_3',
             optionA: 'Never be able to attend parties',
             optionB: 'Have to attend a party every single day',
-            typePoints: { party_animal: -2, introvert: 2, butterfly: -1, lone_wolf: 1 }
+            typePoints: { disco_disaster: -2, blanket_burrito: 2, social_gps: -1, ghost_protocol: 1 }
         },
         {
             id: 'soc_4',
             optionA: 'Be famous on social media',
             optionB: 'Be completely anonymous online',
-            typePoints: { party_animal: 1, introvert: -1, butterfly: 2, lone_wolf: -2 }
+            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_5',
             optionA: 'Work in a busy open office',
             optionB: 'Work from home forever',
-            typePoints: { party_animal: 1, introvert: -2, butterfly: 1, lone_wolf: -1 }
+            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 1, ghost_protocol: -1 }
         },
         {
             id: 'soc_6',
             optionA: 'Live in a commune with 50 people',
             optionB: 'Live alone on a mountain',
-            typePoints: { party_animal: 1, introvert: -2, butterfly: 1, lone_wolf: -2 }
+            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 1, ghost_protocol: -2 }
         },
         {
             id: 'soc_7',
             optionA: 'Always say exactly what you think',
             optionB: 'Never be able to speak your mind',
-            typePoints: { party_animal: 1, introvert: 0, butterfly: 0, lone_wolf: 1 }
+            typePoints: { disco_disaster: 1, blanket_burrito: 0, social_gps: 0, ghost_protocol: 1 }
         },
         {
             id: 'soc_8',
             optionA: 'Be the best dancer but terrible singer',
             optionB: 'Be the best singer but terrible dancer',
-            typePoints: { party_animal: 1, introvert: 0, butterfly: 1, lone_wolf: 0 }
+            typePoints: { disco_disaster: 1, blanket_burrito: 0, social_gps: 1, ghost_protocol: 0 }
         },
         {
             id: 'soc_9',
             optionA: 'Have 100 acquaintances',
             optionB: 'Have 3 best friends',
-            typePoints: { party_animal: 0, introvert: -1, butterfly: 2, lone_wolf: -2 }
+            typePoints: { disco_disaster: 0, blanket_burrito: -1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_10',
             optionA: 'Be the organizer of every social event',
             optionB: 'Never have to plan anything social',
-            typePoints: { party_animal: 1, introvert: -1, butterfly: 2, lone_wolf: -1 }
+            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: -1 }
         }
     ],
     
-    food: [
+    food_fight: [
         {
             id: 'food_1',
             optionA: 'Eat only pizza for the rest of your life',
             optionB: 'Never eat pizza again',
-            typePoints: { gourmet: -2, comfort: 2, adventurous: -1, healthy: -1 }
+            typePoints: { fancy_pants: -2, couch_potato_pro: 2, spice_warrior: -1, kale_knight: -1 }
         },
         {
             id: 'food_2',
             optionA: 'Have a personal chef',
             optionB: 'Be an amazing cook yourself',
-            typePoints: { gourmet: 1, comfort: 0, adventurous: 0, healthy: 0 }
+            typePoints: { fancy_pants: 1, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 0 }
         },
         {
             id: 'food_3',
             optionA: 'Only eat at Michelin star restaurants',
             optionB: 'Only eat street food',
-            typePoints: { gourmet: 2, comfort: -1, adventurous: -1, healthy: 0 }
+            typePoints: { fancy_pants: 2, couch_potato_pro: -1, spice_warrior: -1, kale_knight: 0 }
         },
         {
             id: 'food_4',
             optionA: 'Give up chocolate forever',
             optionB: 'Give up cheese forever',
-            typePoints: { gourmet: 0, comfort: 0, adventurous: 0, healthy: 1 }
+            typePoints: { fancy_pants: 0, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 1 }
         },
         {
             id: 'food_5',
             optionA: 'Eat breakfast for every meal',
             optionB: 'Never eat breakfast again',
-            typePoints: { gourmet: -1, comfort: 1, adventurous: -1, healthy: 0 }
+            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: -1, kale_knight: 0 }
         },
         {
             id: 'food_6',
             optionA: 'Try every weird food in the world',
             optionB: 'Stick to familiar foods forever',
-            typePoints: { gourmet: 0, comfort: -2, adventurous: 2, healthy: 0 }
+            typePoints: { fancy_pants: 0, couch_potato_pro: -2, spice_warrior: 2, kale_knight: 0 }
         },
         {
             id: 'food_7',
             optionA: 'Live in a mansion with no kitchen',
             optionB: 'Live in a tiny house with a dream kitchen',
-            typePoints: { gourmet: -1, comfort: 0, adventurous: 0, healthy: 0 }
+            typePoints: { fancy_pants: -1, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 0 }
         },
         {
             id: 'food_8',
             optionA: 'Only eat organic, locally-sourced food',
             optionB: 'Eat whatever you want with no health consequences',
-            typePoints: { gourmet: 0, comfort: -1, adventurous: 0, healthy: 2 }
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 2 }
         },
         {
             id: 'food_9',
             optionA: 'Have every meal be a surprise',
             optionB: 'Plan every meal for the rest of your life',
-            typePoints: { gourmet: 0, comfort: -1, adventurous: 2, healthy: -1 }
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 2, kale_knight: -1 }
         },
         {
             id: 'food_10',
             optionA: 'Only eat spicy food',
             optionB: 'Never taste spice again',
-            typePoints: { gourmet: 0, comfort: -1, adventurous: 1, healthy: 0 }
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 1, kale_knight: 0 }
         }
     ],
     
-    travel: [
+    jet_set: [
         {
             id: 'trav_1',
             optionA: 'Travel to 100 countries but never revisit any',
             optionB: 'Only visit 10 countries but go as often as you want',
-            typePoints: { explorer: 2, comfort_traveler: -2, luxury: 0, backpacker: 1 }
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
         },
         {
             id: 'trav_2',
             optionA: 'Always travel first class but only once a year',
             optionB: 'Travel economy but go anywhere anytime',
-            typePoints: { explorer: -1, comfort_traveler: 0, luxury: 2, backpacker: -2 }
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 2, couch_surfing_ceo: -2 }
         },
         {
             id: 'trav_3',
             optionA: 'Sleep in a different place every night for a year',
             optionB: 'Never leave your hometown again',
-            typePoints: { explorer: 2, comfort_traveler: -2, luxury: -1, backpacker: 2 }
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: -1, couch_surfing_ceo: 2 }
         },
         {
             id: 'trav_4',
             optionA: 'Travel only by boat',
             optionB: 'Never see the ocean again',
-            typePoints: { explorer: 1, comfort_traveler: -1, luxury: 0, backpacker: 0 }
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: 0, couch_surfing_ceo: 0 }
         },
         {
             id: 'trav_5',
             optionA: 'Have unlimited money for travel but only 2 weeks vacation per year',
             optionB: 'Have unlimited time but a tight budget',
-            typePoints: { explorer: -1, comfort_traveler: 0, luxury: 1, backpacker: -1 }
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 1, couch_surfing_ceo: -1 }
         },
         {
             id: 'trav_6',
             optionA: 'Always travel solo',
             optionB: 'Always travel in a group of 10+',
-            typePoints: { explorer: 1, comfort_traveler: -1, luxury: 0, backpacker: 1 }
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
         },
         {
             id: 'trav_7',
             optionA: 'Visit every museum in the world',
             optionB: 'Visit every beach in the world',
-            typePoints: { explorer: 0, comfort_traveler: 0, luxury: 0, backpacker: 0 }
+            typePoints: { wrong_way_wanderer: 0, resort_royalty: 0, champagne_checkpoint: 0, couch_surfing_ceo: 0 }
         },
         {
             id: 'trav_8',
             optionA: 'Stay in 5-star hotels with terrible locations',
             optionB: 'Camp in the most beautiful places on Earth',
-            typePoints: { explorer: -1, comfort_traveler: 1, luxury: 2, backpacker: -2 }
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 1, champagne_checkpoint: 2, couch_surfing_ceo: -2 }
         },
         {
             id: 'trav_9',
             optionA: 'Speak every language but never travel',
             optionB: 'Travel everywhere but only speak your native language',
-            typePoints: { explorer: -1, comfort_traveler: 0, luxury: 0, backpacker: 0 }
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 0, couch_surfing_ceo: 0 }
         },
         {
             id: 'trav_10',
             optionA: 'Have a year-long road trip',
             optionB: 'Have 52 weekend trips',
-            typePoints: { explorer: 1, comfort_traveler: -1, luxury: -1, backpacker: 2 }
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: -1, couch_surfing_ceo: 2 }
         }
     ],
     
-    tech: [
+    future_talk: [
         {
             id: 'tech_1',
             optionA: 'Live in a fully automated smart home',
             optionB: 'Live completely off-grid',
-            typePoints: { futurist: 2, traditionalist: -2, balanced: 0, minimalist: -1 }
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -1 }
         },
         {
             id: 'tech_2',
             optionA: 'Have a phone with infinite battery',
             optionB: 'Have wifi everywhere you go',
-            typePoints: { futurist: 1, traditionalist: -1, balanced: 1, minimalist: 0 }
+            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: 1, digital_detox_guru: 0 }
         },
         {
             id: 'tech_3',
             optionA: 'Be able to control technology with your mind',
             optionB: 'Have technology that reads your emotions',
-            typePoints: { futurist: 2, traditionalist: -2, balanced: 0, minimalist: -1 }
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -1 }
         },
         {
             id: 'tech_4',
             optionA: 'Live in a virtual reality world',
             optionB: 'Never use VR/AR technology',
-            typePoints: { futurist: 2, traditionalist: -2, balanced: -1, minimalist: -1 }
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
         },
         {
             id: 'tech_5',
             optionA: 'Have a robot assistant',
             optionB: 'Have a human assistant',
-            typePoints: { futurist: 2, traditionalist: -2, balanced: 0, minimalist: -1 }
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -1 }
         },
         {
             id: 'tech_6',
             optionA: 'Time travel to the past',
             optionB: 'Time travel to the future',
-            typePoints: { futurist: -1, traditionalist: 1, balanced: 0, minimalist: 0 }
+            typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 0 }
         },
         {
             id: 'tech_7',
             optionA: 'Have all your memories stored digitally',
             optionB: 'Keep memories only in your mind',
-            typePoints: { futurist: 2, traditionalist: -2, balanced: -1, minimalist: -1 }
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
         },
         {
             id: 'tech_8',
             optionA: 'Work in the metaverse',
             optionB: 'Only work in physical offices',
-            typePoints: { futurist: 2, traditionalist: -2, balanced: -1, minimalist: -1 }
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
         },
         {
             id: 'tech_9',
             optionA: 'Have the latest tech but it breaks often',
             optionB: 'Have old reliable tech that always works',
-            typePoints: { futurist: 1, traditionalist: -1, balanced: -1, minimalist: 1 }
+            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: -1, digital_detox_guru: 1 }
         },
         {
             id: 'tech_10',
             optionA: 'Live without social media',
             optionB: 'Live without email',
-            typePoints: { futurist: -1, traditionalist: 1, balanced: 0, minimalist: 2 }
+            typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 2 }
         }
     ],
     
-    random: [
+    grab_bag: [
         {
             id: 'rand_1',
             optionA: 'Have a rewind button for life',
             optionB: 'Have a pause button for life',
-            typePoints: { philosopher: 1, comedian: -1, dreamer: 0, realist: 0 }
+            typePoints: { shower_philosopher: 1, meme_machine: -1, main_character_energy: 0, reality_check_champion: 0 }
         },
         {
             id: 'rand_2',
             optionA: 'Be able to fly but only 2 feet off the ground',
             optionB: 'Be able to teleport but only to places you\'ve been',
-            typePoints: { philosopher: 0, comedian: 1, dreamer: 1, realist: -1 }
+            typePoints: { shower_philosopher: 0, meme_machine: 1, main_character_energy: 1, reality_check_champion: -1 }
         },
         {
             id: 'rand_3',
             optionA: 'Have a pet dragon',
             optionB: 'Have a pet unicorn',
-            typePoints: { philosopher: -1, comedian: 0, dreamer: 2, realist: -2 }
+            typePoints: { shower_philosopher: -1, meme_machine: 0, main_character_energy: 2, reality_check_champion: -2 }
         },
         {
             id: 'rand_4',
             optionA: 'Always know when someone is lying',
             optionB: 'Always get away with lying',
-            typePoints: { philosopher: 2, comedian: -1, dreamer: -1, realist: 1 }
+            typePoints: { shower_philosopher: 2, meme_machine: -1, main_character_energy: -1, reality_check_champion: 1 }
         },
         {
             id: 'rand_5',
             optionA: 'Have fingers as long as legs',
             optionB: 'Have legs as short as fingers',
-            typePoints: { philosopher: -1, comedian: 2, dreamer: 0, realist: -1 }
+            typePoints: { shower_philosopher: -1, meme_machine: 2, main_character_energy: 0, reality_check_champion: -1 }
         },
         {
             id: 'rand_6',
             optionA: 'Sneeze glitter',
             optionB: 'Cry chocolate tears',
-            typePoints: { philosopher: -1, comedian: 1, dreamer: 2, realist: -2 }
+            typePoints: { shower_philosopher: -1, meme_machine: 1, main_character_energy: 2, reality_check_champion: -2 }
         },
         {
             id: 'rand_7',
             optionA: 'Have your thoughts appear above your head',
             optionB: 'Have theme music play based on your mood',
-            typePoints: { philosopher: 1, comedian: 1, dreamer: 0, realist: -2 }
+            typePoints: { shower_philosopher: 1, meme_machine: 1, main_character_energy: 0, reality_check_champion: -2 }
         },
         {
             id: 'rand_8',
             optionA: 'Be the funniest person alive but no one gets your jokes',
             optionB: 'Think everyone is hilarious but never laugh',
-            typePoints: { philosopher: 1, comedian: -2, dreamer: 0, realist: 0 }
+            typePoints: { shower_philosopher: 1, meme_machine: -2, main_character_energy: 0, reality_check_champion: 0 }
         },
         {
             id: 'rand_9',
             optionA: 'Live in a world made of candy',
             optionB: 'Live in a world made of LEGO',
-            typePoints: { philosopher: -1, comedian: 0, dreamer: 2, realist: -2 }
+            typePoints: { shower_philosopher: -1, meme_machine: 0, main_character_energy: 2, reality_check_champion: -2 }
         },
         {
             id: 'rand_10',
             optionA: 'Have a tail that shows your emotions',
             optionB: 'Change color based on your mood',
-            typePoints: { philosopher: 0, comedian: 1, dreamer: 1, realist: -2 }
+            typePoints: { shower_philosopher: 0, meme_machine: 1, main_character_energy: 1, reality_check_champion: -2 }
         }
     ]
 };
 
 // Personality Types Database
 const PERSONALITY_TYPES = {
-    survival: {
-        desert: {
-            name: 'Desert Wanderer',
-            icon: '🏜️',
-            description: 'You\'re a true survivor who thrives in challenging conditions. Your independent spirit and resourcefulness make you the perfect companion for any adventure. While others panic, you stay cool as a cactus!'
+    survival_mode: {
+        cactus_hugger: {
+            name: 'Cactus Hugger',
+            icon: '🌵',
+            description: 'You\'re the friend who brings 47 water bottles on a 2-hour trip. Your survival strategy? Overprepare for everything, including scenarios that only exist in movies. You\'ve definitely googled \'how to survive quicksand\' at 3 AM.'
         },
-        arctic: {
-            name: 'Arctic Explorer',
+        polar_bear_mode: {
+            name: 'Polar Bear Mode',
             icon: '❄️',
-            description: 'You have ice in your veins and adventure in your heart. Extreme conditions don\'t phase you - you embrace the cold and find beauty in the harshest environments. You\'re the person everyone wants on their expedition team!'
+            description: 'You wear shorts in winter and claim \'it\'s not that cold.\' Your ideal vacation involves igloos and frostbite warnings. Friends suspect you\'re secretly training for the next Ice Age, and honestly? They might be right.'
         },
-        jungle: {
-            name: 'Jungle Survivor',
+        jungle_vip: {
+            name: 'Jungle VIP',
             icon: '🌴',
-            description: 'You\'re adaptable, resourceful, and thrive in chaotic environments. The wild calls to you, and you answer with confidence. Your ability to navigate complex situations makes you a natural leader in any adventure!'
+            description: 'You\'re the one who befriends mosquitoes and names the spiders in your tent. While others scream at bugs, you\'re conducting interviews with them. Your motto: \'If Bear Grylls can eat it, so can I!\''
         },
-        urban: {
-            name: 'Urban Prepper',
+        concrete_survivor: {
+            name: 'Concrete Survivor',
             icon: '🏙️',
-            description: 'You\'re street-smart and always prepared. While others dream of wilderness, you know the real survival game is in the concrete jungle. Your practical mindset and city savvy make you unstoppable!'
+            description: 'You know every 24/7 store in a 10-mile radius and have mapped all the WiFi passwords. Your bug-out bag contains phone chargers and coffee shop loyalty cards. The apocalypse better have good cell service.'
         }
     },
     
-    social: {
-        party_animal: {
-            name: 'Party Animal',
+    social_life: {
+        disco_disaster: {
+            name: 'Disco Disaster',
             icon: '🎉',
-            description: 'You\'re the life of every party and the spark that lights up any room! Your energy is contagious, and people gravitate toward your fun-loving spirit. When you\'re around, boring is simply not an option!'
+            description: 'You\'re why parties have a \'one friend maximum\' rule. Your energy could power a small city, and your dance moves have been classified as natural disasters in 3 states. We love you, but please stop suggesting karaoke at funerals.'
         },
-        introvert: {
-            name: 'Cozy Introvert',
+        blanket_burrito: {
+            name: 'Blanket Burrito',
             icon: '🕯️',
-            description: 'You\'re a master of meaningful connections and deep conversations. While others seek the spotlight, you create magic in quiet moments. Your thoughtful nature and genuine presence make you unforgettable!'
+            description: 'Your ideal party involves exactly 0 people and 17 blankets. You\'ve mastered the art of looking busy on your phone, and your spirit animal is a \'Do Not Disturb\' sign. Netflix asks if YOU\'RE still watching.'
         },
-        butterfly: {
-            name: 'Social Butterfly',
+        social_gps: {
+            name: 'Social GPS',
             icon: '🦋',
-            description: 'You flutter gracefully between different social circles, making everyone feel special. Your natural charm and adaptability help you connect with anyone. You\'re the glue that holds friend groups together!'
+            description: 'You know everyone\'s birthday, their dog\'s name, and their coffee order. You\'re simultaneously invited to 7 events and somehow attend all of them. Scientists study your ability to remember names after meeting someone once.'
         },
-        lone_wolf: {
-            name: 'Lone Wolf',
+        ghost_protocol: {
+            name: 'Ghost Protocol',
             icon: '🐺',
-            description: 'You march to the beat of your own drum and wouldn\'t have it any other way. Your independence is your strength, and you choose quality over quantity in relationships. Mysterious and intriguing, you\'re unforgettable!'
+            description: 'You\'re the Houdini of social events - there one second, vanished the next. Your superpower is leaving parties without anyone noticing. Friends have started taking attendance just to track you.'
         }
     },
     
-    food: {
-        gourmet: {
-            name: 'Gourmet Guru',
+    food_fight: {
+        fancy_pants: {
+            name: 'Fancy Pants',
             icon: '👨‍🍳',
-            description: 'You have a refined palate and appreciate the finer things in life. Food isn\'t just sustenance for you - it\'s an art form. Your sophisticated taste and culinary knowledge make every meal an experience!'
+            description: 'You pronounce \'croissant\' so French that actual French people get confused. Your Instagram is 98% food pics with perfect lighting. You\'ve definitely corrected someone\'s pronunciation of \'quinoa\' at least twice today.'
         },
-        comfort: {
-            name: 'Comfort Food Champion',
+        couch_potato_pro: {
+            name: 'Couch Potato Pro',
             icon: '🍕',
-            description: 'You know that the best meals are the ones that warm your soul. Simple pleasures and familiar flavors are your love language. Your down-to-earth approach to food brings joy and comfort to everyone around you!'
+            description: 'Your food pyramid is just a triangle of pizza. You have strong opinions about the correct way to eat Oreos and consider cereal a viable dinner option. Gordon Ramsay would cry, but you\'re living your best life.'
         },
-        adventurous: {
-            name: 'Adventurous Eater',
+        spice_warrior: {
+            name: 'Spice Warrior',
             icon: '🌶️',
-            description: 'You\'ll try anything once and probably love it! Your culinary courage knows no bounds, and you\'re always seeking the next flavor adventure. Your fearless approach to food makes every meal exciting!'
+            description: 'You\'re the friend who orders \'extra spicy\' and makes the waiter nervous. Your taste buds went on vacation in 2015 and never came back. You\'ve definitely eaten something on a dare and asked for seconds.'
         },
-        healthy: {
-            name: 'Health Conscious Hero',
+        kale_knight: {
+            name: 'Kale Knight',
             icon: '🥗',
-            description: 'You treat your body like a temple and food as fuel for greatness. Your balanced approach to eating inspires others to make better choices. You prove that healthy can be delicious and satisfying!'
+            description: 'Your smoothies have more ingredients than a chemistry set. You know what spirulina is AND how to pronounce it. Friends hide their snacks when you visit, fearing your judgment and unsolicited nutrition facts.'
         }
     },
     
-    travel: {
-        explorer: {
-            name: 'Intrepid Explorer',
+    jet_set: {
+        wrong_way_wanderer: {
+            name: 'Wrong Way Wanderer',
             icon: '🧭',
-            description: 'You\'re driven by an insatiable curiosity about the world. No destination is too remote, no journey too challenging. Your adventurous spirit and open mind make you a true citizen of the world!'
+            description: 'You\'re the person who gets lost with GPS AND a map. Your travel stories all start with \'So I took a wrong turn...\' but somehow end up being the best adventures. Google Maps has given up on you.'
         },
-        comfort_traveler: {
-            name: 'Comfort Traveler',
+        resort_royalty: {
+            name: 'Resort Royalty',
             icon: '🏖️',
-            description: 'You believe travel should be relaxing and rejuvenating. You\'ve mastered the art of vacation, finding the perfect balance between adventure and comfort. Your travel style is all about making memories without the stress!'
+            description: 'Your idea of \'roughing it\' is a 4-star hotel. You\'ve never met a pool you didn\'t Instagram. Your passport is basically a collection of resort stamps, and you know every spa treatment by its Sanskrit name.'
         },
-        luxury: {
-            name: 'Luxury Wanderer',
+        champagne_checkpoint: {
+            name: 'Champagne Checkpoint',
             icon: '✈️',
-            description: 'You travel in style and believe that the journey is just as important as the destination. Your impeccable taste and attention to detail turn every trip into a five-star experience. You know how to travel like royalty!'
+            description: 'You judge airports by their lounge quality and know flight attendants by name. Your luggage has better insurance than most cars. You\'ve definitely complained about \'only\' having champagne in business class.'
         },
-        backpacker: {
-            name: 'Budget Backpacker',
+        couch_surfing_ceo: {
+            name: 'Couch Surfing CEO',
             icon: '🎒',
-            description: 'You can travel the world on pocket change and have more fun than anyone else doing it. Your resourcefulness and adventurous spirit open doors that money can\'t buy. You collect experiences, not things!'
+            description: 'You can survive on $3 a day and somehow still have the best stories. Your backpack is basically a portable home. You\'ve definitely slept in an airport and rated it on TripAdvisor.'
         }
     },
     
-    tech: {
-        futurist: {
-            name: 'Tech Futurist',
+    future_talk: {
+        wifi_whisperer: {
+            name: 'WiFi Whisperer',
             icon: '🚀',
-            description: 'You\'re living in tomorrow while others are stuck in yesterday. Your embrace of technology and innovation puts you at the cutting edge. You see possibilities where others see science fiction!'
+            description: 'You named your firstborn \'Alexa\' and your router has its own Instagram. You\'ve tried to swipe right on your refrigerator and honestly believe that turning it off and on again solves 97% of life\'s problems. Including relationships.'
         },
-        traditionalist: {
-            name: 'Digital Traditionalist',
+        analog_angel: {
+            name: 'Analog Angel',
             icon: '📻',
-            description: 'You appreciate the reliability and simplicity of tried-and-true technology. While others chase the latest gadget, you value what actually works. Your practical approach to tech makes you the voice of reason!'
+            description: 'You still have a flip phone and it\'s not ironic. Your VCR is \'perfectly functional\' and you know what a floppy disk is. Friends call you for tech support, but only for devices made before 2005.'
         },
-        balanced: {
-            name: 'Tech Balanced',
+        update_dodger: {
+            name: 'Update Dodger',
             icon: '⚖️',
-            description: 'You\'ve found the perfect equilibrium between digital and analog life. You use technology as a tool, not a crutch. Your balanced approach makes you adaptable and grounded in any situation!'
+            description: 'You have exactly 47 unread app updates and that red notification badge doesn\'t bother you at all (it does). You use technology like a normal person, which makes you the weird one in 2024.'
         },
-        minimalist: {
-            name: 'Digital Minimalist',
+        digital_detox_guru: {
+            name: 'Digital Detox Guru',
             icon: '🌱',
-            description: 'You\'ve mastered the art of using less to achieve more. Your selective approach to technology keeps you focused on what truly matters. You prove that sometimes the best app is no app at all!'
+            description: 'Your screen time report is so low, Apple sends you concerned emails. You\'ve definitely told someone about the benefits of a \'digital detox\' while they were mid-Instagram story. Your phone is basically a very expensive clock.'
         }
     },
     
-    random: {
-        philosopher: {
-            name: 'Whimsical Philosopher',
+    grab_bag: {
+        shower_philosopher: {
+            name: 'Shower Philosopher',
             icon: '🤔',
-            description: 'You find deep meaning in the absurd and wisdom in the silly. Your unique perspective on life\'s weird questions makes you endlessly fascinating. You\'re the friend everyone turns to for mind-bending conversations!'
+            description: 'You\'ve solved world peace in your head but forgot it by the time you grabbed a towel. Your 3 AM thoughts could fuel a Netflix series. Friends come to you for life advice but you can\'t even match your socks.'
         },
-        comedian: {
-            name: 'Cosmic Comedian',
+        meme_machine: {
+            name: 'Meme Machine',
             icon: '😂',
-            description: 'You see the humor in everything, especially the bizarre and unexpected. Your ability to laugh at life\'s absurdities is contagious. You remind everyone that sometimes the best answer is the funniest one!'
+            description: 'Your entire personality is pop culture references and vine quotes. You communicate primarily in GIFs and have a meme for every life situation. Your search history is 90% \'that one meme where the guy...\''
         },
-        dreamer: {
-            name: 'Fantastical Dreamer',
+        main_character_energy: {
+            name: 'Main Character Energy',
             icon: '🌟',
-            description: 'Your imagination knows no bounds and reality is just a suggestion. You live in a world of infinite possibilities and magical thinking. Your creative spirit inspires others to dream bigger and weirder!'
+            description: 'You\'re living in a movie and everyone else is just an extra. Your life soundtrack plays in your head 24/7. You\'ve definitely practiced your Oscar speech in the shower. Multiple times. Today.'
         },
-        realist: {
-            name: 'Grounded Realist',
+        reality_check_champion: {
+            name: 'Reality Check Champion',
             icon: '🌍',
-            description: 'Even when faced with the impossible, you keep your feet on the ground. Your practical approach to even the wildest scenarios is refreshing. You\'re the anchor that keeps everyone from floating away!'
+            description: 'You\'re the friend who reads the terms and conditions. Your superpower is ruining fun facts with actual facts. While others dream of unicorns, you\'re calculating their food costs and stable requirements.'
         }
     }
 };
