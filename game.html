@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div class="game-container">
@@ -41,37 +44,49 @@
                 
                 <div class="categories-grid">
                     <button class="category-card" data-category="survival">
-                        <span class="category-icon">🏜️</span>
+                        <span class="category-icon">
+                            <i data-lucide="tent" class="icon-large"></i>
+                        </span>
                         <h3 class="category-name">Survival</h3>
                         <p class="category-desc">Test your survival instincts</p>
                     </button>
                     
                     <button class="category-card" data-category="social">
-                        <span class="category-icon">🎉</span>
+                        <span class="category-icon">
+                            <i data-lucide="users" class="icon-large"></i>
+                        </span>
                         <h3 class="category-name">Social</h3>
                         <p class="category-desc">Party and social scenarios</p>
                     </button>
                     
                     <button class="category-card" data-category="food">
-                        <span class="category-icon">🍕</span>
+                        <span class="category-icon">
+                            <i data-lucide="utensils" class="icon-large"></i>
+                        </span>
                         <h3 class="category-name">Food & Lifestyle</h3>
                         <p class="category-desc">Tasty choices and living preferences</p>
                     </button>
                     
                     <button class="category-card" data-category="travel">
-                        <span class="category-icon">✈️</span>
+                        <span class="category-icon">
+                            <i data-lucide="map" class="icon-large"></i>
+                        </span>
                         <h3 class="category-name">Travel & Adventure</h3>
                         <p class="category-desc">Explore your adventurous side</p>
                     </button>
                     
                     <button class="category-card" data-category="tech">
-                        <span class="category-icon">🤖</span>
+                        <span class="category-icon">
+                            <i data-lucide="cpu" class="icon-large"></i>
+                        </span>
                         <h3 class="category-name">Tech & Future</h3>
                         <p class="category-desc">Tomorrow's world choices</p>
                     </button>
                     
                     <button class="category-card" data-category="random">
-                        <span class="category-icon">🎲</span>
+                        <span class="category-icon">
+                            <i data-lucide="sparkles" class="icon-large"></i>
+                        </span>
                         <h3 class="category-name">Random Fun</h3>
                         <p class="category-desc">Wild and wacky scenarios</p>
                     </button>
@@ -129,7 +144,9 @@
                 <h2 class="results-title">Your Personality Type:</h2>
                 
                 <div class="personality-card">
-                    <div class="personality-icon" id="personality-icon">🏜️</div>
+                    <div class="personality-icon">
+                        <i data-lucide="star" class="icon-large" id="personality-icon"></i>
+                    </div>
                     <h3 class="personality-type" id="personality-type">Desert Wanderer</h3>
                     <p class="personality-description" id="personality-description">
                         You're a true survivor who thrives in challenging conditions. 
@@ -166,5 +183,37 @@
     <script src="js/questions.js"></script>
     <script src="js/share.js"></script>
     <script src="js/game.js"></script>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        // Emergency clear for corrupted state
+        try {
+            const savedState = localStorage.getItem('wouldYouRatherState');
+            if (savedState) {
+                try {
+                    JSON.parse(savedState);
+                } catch (e) {
+                    console.error('Corrupted game state detected, clearing...');
+                    localStorage.removeItem('wouldYouRatherState');
+                }
+            }
+        } catch (e) {
+            console.error('Error checking saved state:', e);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Game page loaded, initializing Lucide...');
+            
+            // Initialize icons immediately if available
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                try {
+                    window.lucide.createIcons();
+                    console.log('Lucide icons initialized');
+                } catch (e) {
+                    console.error('Lucide error:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

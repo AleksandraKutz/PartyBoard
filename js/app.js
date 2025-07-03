@@ -1,4 +1,5 @@
 // PartyBoard - Main Application JavaScript
+console.log('Loading app.js...');
 
 // App Configuration
 const APP_CONFIG = {
@@ -73,6 +74,13 @@ function showDisclaimer() {
 function showApp() {
     const app = document.getElementById('app');
     app.classList.remove('hidden');
+    
+    // Initialize Lucide icons after showing app
+    if (window.lucide) {
+        setTimeout(() => {
+            window.lucide.createIcons();
+        }, 100);
+    }
 }
 
 // Initialize app features

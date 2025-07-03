@@ -1,7 +1,9 @@
 // PartyBoard - Would You Rather Game Logic
+console.log('Loading game.js...');
 
 class WouldYouRatherGame {
     constructor() {
+        console.log('Initializing WouldYouRatherGame...');
         this.currentCategory = null;
         this.currentQuestionIndex = 0;
         this.answers = [];
@@ -15,6 +17,9 @@ class WouldYouRatherGame {
         this.setupQuestionHandlers();
         this.setupNavigation();
         this.setupResults();
+        
+        // Show category screen by default
+        this.showScreen('category-screen');
         
         // Check if we have saved game state
         this.loadGameState();
@@ -236,9 +241,23 @@ class WouldYouRatherGame {
         // Update results display
         const typeData = window.WouldYouRatherData.personalityTypes[this.currentCategory][result.type];
         
-        document.getElementById('personality-icon').textContent = typeData.icon;
+        // Update personality type text
         document.getElementById('personality-type').textContent = typeData.name;
         document.getElementById('personality-description').textContent = typeData.description;
+        
+        // Update icon based on category
+        const iconElement = document.querySelector('#personality-icon');
+        if (iconElement) {
+            const iconMap = {
+                survival: 'compass',
+                social: 'users',
+                food: 'utensils',
+                travel: 'map',
+                tech: 'cpu',
+                random: 'sparkles'
+            };
+            iconElement.setAttribute('data-lucide', iconMap[this.currentCategory] || 'star');
+        }
         
         // Update stats
         document.getElementById('questions-answered').textContent = 
@@ -259,6 +278,11 @@ class WouldYouRatherGame {
         
         // Show results screen
         this.showScreen('results-screen');
+        
+        // Re-initialize icons for results
+        if (window.lucide) {
+            setTimeout(() => window.lucide.createIcons(), 100);
+        }
         
         // Clear saved state
         this.clearGameState();
@@ -335,15 +359,42 @@ class WouldYouRatherGame {
     }
     
     showScreen(screenId) {
-        // Hide all screens
-        document.querySelectorAll('.screen').forEach(screen => {
-            screen.classList.remove('active');
-        });
+        console.log('Showing screen:', screenId);
         
-        // Show requested screen
-        const targetScreen = document.getElementById(screenId);
-        if (targetScreen) {
-            targetScreen.classList.add('active');
+        try {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show requested screen
+            const targetScreen = document.getElementById(screenId);
+            if (targetScreen) {
+                targetScreen.classList.add('active');
+            } else {
+                console.error('Screen not found:', screenId);
+                // Fallback to category screen
+                const categoryScreen = document.getElementById('category-screen');
+                if (categoryScreen) {
+                    categoryScreen.classList.add('active');
+                }
+            }
+            
+            // Re-initialize Lucide icons safely
+            if (window.lucide && typeof window.lucide.createIcons === 'function' && !this.iconUpdatePending) {
+                this.iconUpdatePending = true;
+                setTimeout(() => {
+                    try {
+                        window.lucide.createIcons();
+                        console.log('Icons re-initialized for screen:', screenId);
+                    } catch (iconError) {
+                        console.error('Error initializing icons:', iconError);
+                    }
+                    this.iconUpdatePending = false;
+                }, 100);
+            }
+        } catch (error) {
+            console.error('Error in showScreen:', error);
         }
     }
     
@@ -353,6 +404,11 @@ class WouldYouRatherGame {
         this.answers = [];
         this.questions = [];
         this.showScreen('category-screen');
+        
+        // Re-initialize icons
+        if (window.lucide) {
+            setTimeout(() => window.lucide.createIcons(), 100);
+        }
     }
     
     saveGameState() {
@@ -367,33 +423,54 @@ class WouldYouRatherGame {
     }
     
     loadGameState() {
-        const savedState = localStorage.getItem('wouldYouRatherState');
-        if (savedState) {
+        try {
+            const savedState = localStorage.getItem('wouldYouRatherState');
+            if (!savedState) {
+                console.log('No saved game state found');
+                return;
+            }
+            
+            let state;
             try {
-                const state = JSON.parse(savedState);
-                
-                // Check if state is less than 1 hour old
-                if (Date.now() - state.timestamp < 3600000) {
-                    if (confirm('Continue your previous game?')) {
-                        this.currentCategory = state.category;
-                        this.currentQuestionIndex = state.questionIndex;
-                        this.answers = state.answers || [];
-                        
-                        if (this.currentCategory && window.WouldYouRatherData) {
-                            this.questions = window.WouldYouRatherData.questions[this.currentCategory];
-                            this.showScreen('question-screen');
-                            this.displayQuestion();
-                        }
+                state = JSON.parse(savedState);
+            } catch (parseError) {
+                console.error('Invalid saved state, clearing...', parseError);
+                this.clearGameState();
+                return;
+            }
+            
+            // Validate state structure
+            if (!state || typeof state !== 'object' || !state.timestamp) {
+                console.warn('Invalid state structure, clearing...');
+                this.clearGameState();
+                return;
+            }
+            
+            // Check if state is less than 1 hour old
+            if (Date.now() - state.timestamp < 3600000) {
+                if (confirm('Continue your previous game?')) {
+                    this.currentCategory = state.category;
+                    this.currentQuestionIndex = state.questionIndex || 0;
+                    this.answers = state.answers || [];
+                    
+                    if (this.currentCategory && window.WouldYouRatherData && window.WouldYouRatherData.questions[this.currentCategory]) {
+                        this.questions = window.WouldYouRatherData.questions[this.currentCategory];
+                        this.showScreen('question-screen');
+                        this.displayQuestion();
                     } else {
+                        console.warn('Invalid category or missing data, returning to categories');
                         this.clearGameState();
                     }
                 } else {
                     this.clearGameState();
                 }
-            } catch (e) {
-                console.error('Error loading game state:', e);
+            } else {
+                console.log('Saved state too old, clearing...');
                 this.clearGameState();
             }
+        } catch (error) {
+            console.error('Error in loadGameState:', error);
+            this.clearGameState();
         }
     }
     
@@ -404,10 +481,47 @@ class WouldYouRatherGame {
 
 // Initialize game when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait a bit for all scripts to load
-    setTimeout(() => {
-        console.log('Initializing game...');
-        console.log('Questions data available:', window.WouldYouRatherData);
-        window.game = new WouldYouRatherGame();
-    }, 100);
+    console.log('DOM ready, waiting for scripts...');
+    
+    // Wait for all resources
+    window.addEventListener('load', () => {
+        console.log('All resources loaded');
+        
+        // Extra safety delay
+        setTimeout(() => {
+            try {
+                console.log('Initializing game...');
+                
+                // Check if questions data exists
+                if (!window.WouldYouRatherData) {
+                    console.error('Questions data not loaded!');
+                    alert('Error: Game data not loaded. Please refresh the page.');
+                    return;
+                }
+                
+                console.log('Questions data available:', window.WouldYouRatherData);
+                
+                // Create game instance
+                window.game = new WouldYouRatherGame();
+                
+                // Initialize Lucide icons safely
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    try {
+                        console.log('Initializing Lucide icons...');
+                        window.lucide.createIcons();
+                    } catch (iconError) {
+                        console.error('Error with Lucide icons:', iconError);
+                        // Continue without icons
+                    }
+                } else {
+                    console.warn('Lucide not available, continuing without icons');
+                }
+                
+                console.log('Game initialization complete');
+            } catch (error) {
+                console.error('Error initializing game:', error);
+                alert('Error loading game: ' + error.message + '\nPlease refresh the page.');
+            }
+        }, 200);
+    });
 });

@@ -1,4 +1,5 @@
 // PartyBoard - Would You Rather Questions Database
+console.log('Loading questions.js...');
 
 const QUESTIONS_DB = {
     survival: [

@@ -1,4 +1,5 @@
 // PartyBoard - Privacy-First Analytics Module
+console.log('Loading analytics.js...');
 
 class Analytics {
     constructor() {

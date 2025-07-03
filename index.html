@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <!-- Disclaimer Modal -->
@@ -45,7 +48,7 @@
                 <p class="tagline">Every Party Starts Here!</p>
             </div>
             <div class="header-stats">
-                <span class="live-counter">🔥 <span id="player-count">2,847</span> playing now</span>
+                <span class="live-counter"><i data-lucide="flame" class="icon-small"></i> <span id="player-count">2,847</span> playing now</span>
             </div>
         </header>
 
@@ -56,18 +59,22 @@
             <div class="games-grid">
                 <!-- Would You Rather -->
                 <button class="game-card" data-game="would-you-rather" onclick="window.location.href='game.html?game=would-you-rather'">
-                    <div class="game-icon">🤔</div>
+                    <div class="game-icon">
+                        <i data-lucide="shuffle" class="icon-large"></i>
+                    </div>
                     <h3 class="game-title">Would You Rather?</h3>
                     <p class="game-description">Make impossible choices and discover your personality type!</p>
                     <div class="game-stats">
-                        <span class="player-count">👥 12.5k players today</span>
+                        <span class="player-count"><i data-lucide="users" class="icon-small"></i> 12.5k players today</span>
                         <span class="game-badge">FREE</span>
                     </div>
                 </button>
 
                 <!-- Truth or Dare (Coming Soon) -->
                 <button class="game-card coming-soon" disabled>
-                    <div class="game-icon">🎭</div>
+                    <div class="game-icon">
+                        <i data-lucide="message-circle" class="icon-large"></i>
+                    </div>
                     <h3 class="game-title">Truth or Dare</h3>
                     <p class="game-description">Classic party game with a modern twist!</p>
                     <div class="game-stats">
@@ -77,7 +84,9 @@
 
                 <!-- Who's Most Likely To (Coming Soon) -->
                 <button class="game-card coming-soon" disabled>
-                    <div class="game-icon">🎯</div>
+                    <div class="game-icon">
+                        <i data-lucide="target" class="icon-large"></i>
+                    </div>
                     <h3 class="game-title">Who's Most Likely To?</h3>
                     <p class="game-description">Find out what your friends really think!</p>
                     <div class="game-stats">
@@ -102,13 +111,37 @@
     <script src="js/analytics.js"></script>
     <script src="js/app.js"></script>
     
+    <!-- Initialize Lucide Icons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+    
     <!-- Emergency Disclaimer Fix -->
     <script>
+    console.log('Emergency fix starting...');
+    
     // AWARYJNE ROZWIĄZANIE - bezpośrednio w HTML
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Emergency fix loading...');
+        console.log('DOM loaded, emergency fix executing...');
         
-        // Poczekaj chwilę aż wszystko się załaduje
+        // Sprawdź czy disclaimer już został zaakceptowany
+        const disclaimerAccepted = localStorage.getItem('partyboard_disclaimer_accepted');
+        
+        if (disclaimerAccepted === 'true') {
+            // Jeśli już zaakceptowany, pokaż aplikację
+            document.getElementById('disclaimer-modal').style.display = 'none';
+            document.getElementById('app').classList.remove('hidden');
+            
+            // Zainicjalizuj ikony
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+            return;
+        }
+        
+        // Jeśli nie zaakceptowany, ustaw handlery
         setTimeout(function() {
             const checkbox = document.getElementById('disclaimer-accept');
             const button = document.getElementById('disclaimer-continue');
@@ -140,6 +173,11 @@
                         localStorage.setItem('partyboard_disclaimer_accepted', 'true');
                         document.getElementById('disclaimer-modal').style.display = 'none';
                         document.getElementById('app').classList.remove('hidden');
+                        
+                        // Zainicjalizuj ikony po pokazaniu aplikacji
+                        if (window.lucide) {
+                            setTimeout(() => window.lucide.createIcons(), 100);
+                        }
                     }
                 });
             } else {

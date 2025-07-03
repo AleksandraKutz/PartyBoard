@@ -1,4 +1,5 @@
 // PartyBoard - Share Manager Module
+console.log('Loading share.js...');
 
 class ShareManager {
     constructor() {
