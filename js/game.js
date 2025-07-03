@@ -310,6 +310,9 @@ class WouldYouRatherGame {
     }
     
     showResults() {
+        // WAŻNE: Najpierw usuń zapisany stan gry, bo gra jest skończona
+        this.clearGameState();
+        
         const result = this.calculatePersonality();
         
         // Update results display
@@ -350,7 +353,7 @@ class WouldYouRatherGame {
             });
         }
         
-        // NOWA INTEGRACJA: Zapisz statystyki gry
+        // Zapisz statystyki gry
         if (window.StatsManager) {
             const newAchievements = window.StatsManager.recordGameCompletion({
                 category: this.currentCategory,
@@ -358,10 +361,9 @@ class WouldYouRatherGame {
                 questionsAnswered: this.answers.filter(a => a !== null).length
             });
             
-            // Jeśli są nowe osiągnięcia, pokaż je (TODO: dodać popup)
+            // Jeśli są nowe osiągnięcia, pokaż je
             if (newAchievements.length > 0) {
                 console.log('New achievements unlocked:', newAchievements);
-                // TODO: Pokazać popup z osiągnięciami
                 this.showAchievementPopup(newAchievements);
             }
         }
@@ -373,12 +375,9 @@ class WouldYouRatherGame {
         if (window.lucide) {
             setTimeout(() => window.lucide.createIcons(), 100);
         }
-        
-        // Clear saved state
-        this.clearGameState();
     }
     
-    // NOWA FUNKCJA: Pokazywanie osiągnięć
+    // Pokazywanie osiągnięć
     showAchievementPopup(achievements) {
         achievements.forEach((achievement, index) => {
             setTimeout(() => {
@@ -542,6 +541,21 @@ class WouldYouRatherGame {
             // Validate state structure
             if (!state || typeof state !== 'object' || !state.timestamp) {
                 console.warn('Invalid state structure, clearing...');
+                this.clearGameState();
+                return;
+            }
+            
+            // NOWE: Sprawdź czy gra była ukończona (10 pytań lub więcej odpowiedzi)
+            if (state.answers && state.answers.length >= 10) {
+                console.log('Previous game was completed, clearing saved state...');
+                this.clearGameState();
+                return;
+            }
+            
+            // NOWE: Sprawdź czy wszystkie pytania zostały odpowiedziane
+            if (state.questionIndex && state.answers && state.questionIndex >= state.answers.length && state.answers.length > 0) {
+                // Jeśli index pytania jest równy lub większy niż liczba odpowiedzi, gra mogła być ukończona
+                console.log('Game might be completed, clearing saved state...');
                 this.clearGameState();
                 return;
             }

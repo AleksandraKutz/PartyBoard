@@ -158,63 +158,153 @@ const QUESTIONS_DB = {
     social_life: [
         {
             id: 'soc_1',
-            optionA: 'Always be the life of the party',
-            optionB: 'Always be the mysterious guest',
-            typePoints: { disco_disaster: 2, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
+            optionA: 'Master the art of ending conversations gracefully',
+            optionB: 'Never feel awkward silence in any situation',
+            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: 0 }
         },
         {
             id: 'soc_2',
-            optionA: 'Host a party for 100 strangers',
-            optionB: 'Have a deep conversation with one interesting person',
-            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
+            optionA: 'Make everyone\'s day 10% better but never get credit',
+            optionB: 'Be thanked constantly for things you didn\'t actually do',
+            typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: 0, ghost_protocol: 2 }
         },
         {
             id: 'soc_3',
-            optionA: 'Never be able to attend parties',
-            optionB: 'Have to attend a party every single day',
-            typePoints: { disco_disaster: -2, blanket_burrito: 2, social_gps: -1, ghost_protocol: 1 }
+            optionA: 'Have all your jokes land perfectly but no one remembers you told them',
+            optionB: 'Be known as hilarious but never actually make anyone laugh',
+            typePoints: { disco_disaster: 2, blanket_burrito: -1, social_gps: 1, ghost_protocol: -1 }
         },
         {
             id: 'soc_4',
-            optionA: 'Be famous on social media',
-            optionB: 'Be completely anonymous online',
-            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: -2 }
+            optionA: 'Feel everyone\'s emotions as your own for one hour each day',
+            optionB: 'Be emotionally numb except for one random hour daily',
+            typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_5',
-            optionA: 'Work in a busy open office',
-            optionB: 'Work from home forever',
-            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 1, ghost_protocol: -1 }
+            optionA: 'Be everyone\'s first choice for fun but last choice for serious talks',
+            optionB: 'Be sought for wisdom but never invited to celebrations',
+            typePoints: { disco_disaster: 2, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
         },
         {
             id: 'soc_6',
-            optionA: 'Live in a commune with 50 people',
-            optionB: 'Live alone on a mountain',
-            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 1, ghost_protocol: -2 }
+            optionA: 'Your advice always works but only for others, never for you',
+            optionB: 'You can solve your own problems easily but can\'t help anyone else',
+            typePoints: { disco_disaster: 0, blanket_burrito: 0, social_gps: 2, ghost_protocol: -1 }
         },
         {
             id: 'soc_7',
-            optionA: 'Always say exactly what you think',
-            optionB: 'Never be able to speak your mind',
-            typePoints: { disco_disaster: 1, blanket_burrito: 0, social_gps: 0, ghost_protocol: 1 }
+            optionA: 'Every group photo you\'re in becomes iconic but you always look terrible',
+            optionB: 'Look amazing in every photo but they all get deleted or lost',
+            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_8',
-            optionA: 'Be the best dancer but terrible singer',
-            optionB: 'Be the best singer but terrible dancer',
-            typePoints: { disco_disaster: 1, blanket_burrito: 0, social_gps: 1, ghost_protocol: 0 }
+            optionA: 'Have a magnetic personality that attracts people you don\'t like',
+            optionB: 'Repel everyone initially but form incredible bonds with those who stay',
+            typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 0, ghost_protocol: 2 }
         },
         {
             id: 'soc_9',
-            optionA: 'Have 100 acquaintances',
-            optionB: 'Have 3 best friends',
-            typePoints: { disco_disaster: 0, blanket_burrito: -1, social_gps: 2, ghost_protocol: -2 }
+            optionA: 'Always say things that make people think deeply but kill the mood',
+            optionB: 'Keep conversations light and fun but never have meaningful exchanges',
+            typePoints: { disco_disaster: -2, blanket_burrito: 1, social_gps: 0, ghost_protocol: 1 }
         },
         {
             id: 'soc_10',
-            optionA: 'Be the organizer of every social event',
-            optionB: 'Never have to plan anything social',
-            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: -1 }
+            optionA: 'Be famous for someone else\'s greatest achievement',
+            optionB: 'Never get recognition for your own life-changing work',
+            typePoints: { disco_disaster: 1, blanket_burrito: 0, social_gps: 2, ghost_protocol: -2 }
+        },
+        {
+            id: 'soc_11',
+            optionA: 'Be the person everyone confides in during crisis but ghosts after',
+            optionB: 'Only hear from people during their best moments but miss their struggles',
+            typePoints: { disco_disaster: -1, blanket_burrito: 0, social_gps: 2, ghost_protocol: 1 }
+        },
+        {
+            id: 'soc_12',
+            optionA: 'Your mistakes become everyone\'s favorite funny stories',
+            optionB: 'Be remembered as perfect but incredibly boring',
+            typePoints: { disco_disaster: 2, blanket_burrito: -1, social_gps: 1, ghost_protocol: -1 }
+        },
+        {
+            id: 'soc_13',
+            optionA: 'Your sarcasm is always taken seriously by everyone',
+            optionB: 'Your genuine sincerity always sounds sarcastic',
+            typePoints: { disco_disaster: 0, blanket_burrito: 1, social_gps: -1, ghost_protocol: 2 }
+        },
+        {
+            id: 'soc_14',
+            optionA: 'Be the tech wizard who kills every social situation',
+            optionB: 'Navigate any social moment perfectly but technology dies at your touch',
+            typePoints: { disco_disaster: -2, blanket_burrito: 2, social_gps: -1, ghost_protocol: 1 }
+        },
+        {
+            id: 'soc_15',
+            optionA: 'Remember every conversation in perfect detail but others forget',
+            optionB: 'Have amnesia after each chat but leave unforgettable impressions',
+            typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: 0, ghost_protocol: 2 }
+        },
+        {
+            id: 'soc_16',
+            optionA: 'Be everyone\'s plus-one but never the main invite',
+            optionB: 'Always be invited directly but have no one to bring',
+            typePoints: { disco_disaster: 0, blanket_burrito: 1, social_gps: 2, ghost_protocol: -2 }
+        },
+        {
+            id: 'soc_17',
+            optionA: 'Your presence makes shy people confident but confident people nervous',
+            optionB: 'Bring out everyone\'s worst qualities but they still enjoy your company',
+            typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: 0 }
+        },
+        {
+            id: 'soc_18',
+            optionA: 'Have every goodbye feel final even when it\'s not',
+            optionB: 'Never properly say goodbye to anyone who matters',
+            typePoints: { disco_disaster: -1, blanket_burrito: 0, social_gps: -1, ghost_protocol: 2 }
+        },
+        {
+            id: 'soc_19',
+            optionA: 'Your friends only exist in separate, non-overlapping groups',
+            optionB: 'All your friends know each other but you\'re the least favorite',
+            typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: -2, ghost_protocol: 2 }
+        },
+        {
+            id: 'soc_20',
+            optionA: 'Create best friendships between others then lose touch with both',
+            optionB: 'Break up every friend group you join but keep individual friendships',
+            typePoints: { disco_disaster: 0, blanket_burrito: -1, social_gps: 2, ghost_protocol: 1 }
+        },
+        {
+            id: 'soc_21',
+            optionA: 'Your presence makes every event better but you never enjoy them',
+            optionB: 'Have the time of your life everywhere but kill the vibe for others',
+            typePoints: { disco_disaster: -2, blanket_burrito: 1, social_gps: 2, ghost_protocol: 0 }
+        },
+        {
+            id: 'soc_22',
+            optionA: 'Form instant deep connections that last exactly one year',
+            optionB: 'Take five years to make friends but they last forever',
+            typePoints: { disco_disaster: 2, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
+        },
+        {
+            id: 'soc_23',
+            optionA: 'Know exactly what makes people happy but it never works when you try',
+            optionB: 'Accidentally make people happy without understanding how',
+            typePoints: { disco_disaster: -1, blanket_burrito: 0, social_gps: 1, ghost_protocol: 2 }
+        },
+        {
+            id: 'soc_24',
+            optionA: 'Have everyone trust you with secrets you wish you didn\'t know',
+            optionB: 'Be completely trustworthy but no one believes it',
+            typePoints: { disco_disaster: 0, blanket_burrito: 1, social_gps: 2, ghost_protocol: -1 }
+        },
+        {
+            id: 'soc_25',
+            optionA: 'Be everyone\'s favorite person to complain to about others',
+            optionB: 'Never hear complaints but know you\'re being complained about',
+            typePoints: { disco_disaster: -1, blanket_burrito: 2, social_gps: 1, ghost_protocol: -2 }
         }
     ],
     
