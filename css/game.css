@@ -1,18 +1,4 @@
-.category-icon {
-    font-size: 48px;
-    display: block;
-    margin-bottom: var(--spacing-md);
-    height: 48px;
-    position: relative;
-}
-
-.category-icon .icon-large {
-    color: var(--color-primary);
-    transition: all var(--transition-base);
-    filter: drop-shadow(0 0 10px currentColor);
-    width: 48px;
-    height: 48px;
-}/* PartyBoard - Game Specific Styles */
+/* PartyBoard - Game Specific Styles */
 
 /* Game Container */
 .game-container {
@@ -71,25 +57,12 @@
 
 .progress-fill {
     height: 100%;
-    background: var(--gradient-iridescent);
-    background-size: 300% 100%;
+    background: var(--gradient-primary);
     width: 0%;
     transition: width var(--transition-slow);
-    box-shadow: var(--shadow-glow-primary);
-    animation: gradient-shift 3s ease infinite;
 }
 
-@keyframes gradient-shift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+/* Gradient shift animation removed for performance */
 
 /* Screen Management */
 .screen {
@@ -113,6 +86,17 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 }
 
@@ -155,8 +139,7 @@
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     color: var(--color-text); /* Dodane - biały tekst */
 }
 
@@ -185,8 +168,8 @@
 .category-card:hover {
     transform: translateY(-4px);
     border-color: var(--color-primary);
-    box-shadow: var(--shadow-neon-primary);
-    animation: category-glow 1.5s ease-in-out infinite alternate;
+    box-shadow: 0 8px 24px rgba(255, 0, 110, 0.15);
+    /* animation removed for better performance */
 }
 
 .category-card:hover::before {
@@ -199,14 +182,7 @@
     opacity: 0.05;
 }
 
-@keyframes category-glow {
-    from {
-        box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
-    }
-    to {
-        box-shadow: 0 0 30px rgba(255, 0, 110, 0.8), 0 0 50px rgba(255, 0, 110, 0.4);
-    }
-}
+/* Category glow animation removed for performance */
 
 .category-icon {
     display: flex;
@@ -226,9 +202,8 @@
 }
 
 .category-card:hover .category-icon .icon-large {
-    transform: scale(1.2) rotate(10deg);
+    transform: scale(1.1);
     color: var(--color-secondary);
-    filter: drop-shadow(0 0 20px currentColor);
 }
 
 .category-name {
@@ -255,6 +230,13 @@
     font-size: var(--font-size-sm);
 }
 
+/* Gentle shake animation */
+@keyframes gentle-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
 .skip-button {
     background: rgba(255, 255, 255, 0.1);
     border: none;
@@ -264,11 +246,13 @@
     font-size: var(--font-size-sm);
     cursor: pointer;
     transition: all var(--transition-base);
+    position: relative;
 }
 
 .skip-button:hover {
     background: rgba(255, 255, 255, 0.2);
     color: var(--color-text);
+    animation: gentle-shake 0.5s ease-in-out;
 }
 
 .question-title {
@@ -284,6 +268,20 @@
     flex-direction: column;
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
+}
+
+/* Ripple effect for clicks */
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
 }
 
 .choice-card {
@@ -302,41 +300,34 @@
     min-height: 100px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+/* Ripple element will be added via JS */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
 }
 
 .choice-card:hover {
     border-color: var(--color-primary);
     transform: scale(1.02);
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: var(--shadow-glow-primary),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    animation: choice-pulse 1s ease-in-out infinite;
+    box-shadow: 0 6px 20px rgba(255, 0, 110, 0.15);
+    /* animation removed for better performance */
 }
 
 .choice-card.selected {
     border-color: var(--color-primary);
     background: rgba(255, 0, 110, 0.1);
-    box-shadow: var(--shadow-neon-primary);
-    animation: selected-glow 2s ease-in-out infinite;
+    box-shadow: 0 6px 20px rgba(255, 0, 110, 0.2);
 }
 
-@keyframes choice-pulse {
-    0%, 100% {
-        box-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(255, 0, 110, 0.7), 0 0 35px rgba(255, 0, 110, 0.3);
-    }
-}
-
-@keyframes selected-glow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 0, 110, 0.8), 0 0 40px rgba(255, 0, 110, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(255, 0, 110, 1), 0 0 50px rgba(255, 0, 110, 0.6);
-    }
-}
+/* Choice animations removed for performance */
 
 .choice-letter {
     width: 48px;
@@ -443,6 +434,7 @@
     position: relative;
 }
 
+/* Results Animation */
 .results-animation {
     position: absolute;
     top: 0;
@@ -490,22 +482,10 @@
     margin-bottom: var(--spacing-xl);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.personality-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
-    opacity: 0.05;
-    animation: rotate 20s linear infinite;
-}
+/* Removed rotating background animation */
 
 @keyframes rotate {
     from {
@@ -648,9 +628,8 @@
 }
 
 .category-card:hover .category-icon .icon-large {
-    transform: scale(1.2) rotate(10deg);
+    transform: scale(1.1);
     color: var(--color-secondary);
-    filter: drop-shadow(0 0 20px currentColor);
 }
 
 /* Touch-friendly adjustments */

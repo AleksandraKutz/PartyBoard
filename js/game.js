@@ -12,14 +12,20 @@ class WouldYouRatherGame {
     }
     
     init() {
-        // Set up event listeners
-        this.setupCategorySelection();
-        this.setupQuestionHandlers();
-        this.setupNavigation();
-        this.setupResults();
+        console.log('Initializing game...');
         
         // Show category screen by default
         this.showScreen('category-screen');
+        
+        // Set up event listeners AFTER showing screen
+        setTimeout(() => {
+            this.setupCategorySelection();
+            this.setupQuestionHandlers();
+            this.setupNavigation();
+            this.setupResults();
+            
+            console.log('Event listeners set up');
+        }, 100);
         
         // Check if we have saved game state
         this.loadGameState();
@@ -27,10 +33,24 @@ class WouldYouRatherGame {
     
     setupCategorySelection() {
         const categoryCards = document.querySelectorAll('.category-card');
+        console.log('Setting up categories, found:', categoryCards.length);
+        
         categoryCards.forEach(card => {
             card.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const category = e.currentTarget.dataset.category;
-                this.startGame(category);
+                console.log('Category clicked:', category);
+                
+                // Create ripple effect
+                this.createRipple(e, card);
+                
+                // Start game after ripple
+                setTimeout(() => {
+                    console.log('Starting game with category:', category);
+                    this.startGame(category);
+                }, 200);
             });
         });
     }
@@ -38,7 +58,12 @@ class WouldYouRatherGame {
     setupQuestionHandlers() {
         const choiceCards = document.querySelectorAll('.choice-card');
         choiceCards.forEach(card => {
+            // Add ripple effect on click
             card.addEventListener('click', (e) => {
+                // Create ripple effect at click position
+                this.createRipple(e, card);
+                
+                // Handle answer selection
                 const choice = e.currentTarget.dataset.choice;
                 this.selectAnswer(choice);
             });
@@ -50,6 +75,37 @@ class WouldYouRatherGame {
             skipButton.addEventListener('click', () => {
                 this.skipQuestion();
             });
+        }
+    }
+    
+    createRipple(event, element) {
+        try {
+            // Remove any existing ripples
+            const existingRipple = element.querySelector('.ripple');
+            if (existingRipple) {
+                existingRipple.remove();
+            }
+            
+            // Get click position relative to the element
+            const rect = element.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            
+            // Create ripple element
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            // Add to element
+            element.appendChild(ripple);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        } catch (error) {
+            console.error('Error creating ripple:', error);
         }
     }
     
@@ -276,6 +332,22 @@ class WouldYouRatherGame {
             });
         }
         
+        // NOWA INTEGRACJA: Zapisz statystyki gry
+        if (window.StatsManager) {
+            const newAchievements = window.StatsManager.recordGameCompletion({
+                category: this.currentCategory,
+                personalityType: typeData.name,
+                questionsAnswered: this.answers.filter(a => a !== null).length
+            });
+            
+            // Jeśli są nowe osiągnięcia, pokaż je (TODO: dodać popup)
+            if (newAchievements.length > 0) {
+                console.log('New achievements unlocked:', newAchievements);
+                // TODO: Pokazać popup z osiągnięciami
+                this.showAchievementPopup(newAchievements);
+            }
+        }
+        
         // Show results screen
         this.showScreen('results-screen');
         
@@ -286,6 +358,16 @@ class WouldYouRatherGame {
         
         // Clear saved state
         this.clearGameState();
+    }
+    
+    // NOWA FUNKCJA: Pokazywanie osiągnięć
+    showAchievementPopup(achievements) {
+        achievements.forEach((achievement, index) => {
+            setTimeout(() => {
+                // Prosty alert na razie, później zrobimy ładny popup
+                alert(`🎉 Achievement Unlocked!\n\n${achievement.name}\n${achievement.description}`);
+            }, index * 1000);
+        });
     }
     
     calculatePersonality() {
