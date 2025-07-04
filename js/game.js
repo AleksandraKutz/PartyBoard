@@ -322,18 +322,11 @@ class WouldYouRatherGame {
         document.getElementById('personality-type').textContent = typeData.name;
         document.getElementById('personality-description').textContent = typeData.description;
         
-        // Update icon based on category
-        const iconElement = document.querySelector('#personality-icon');
-        if (iconElement) {
-            const iconMap = {
-                survival: 'compass',
-                social: 'users',
-                food: 'utensils',
-                travel: 'map',
-                tech: 'cpu',
-                random: 'sparkles'
-            };
-            iconElement.setAttribute('data-lucide', iconMap[this.currentCategory] || 'star');
+        // Update icon - use emoji from personality type instead of generic category icon
+        const iconElement = document.querySelector('.personality-icon');
+        if (iconElement && typeData.icon) {
+            // Replace the Lucide icon with the personality emoji
+            iconElement.innerHTML = `<span style="font-size: 72px;">${typeData.icon}</span>`;
         }
         
         // Update stats
@@ -379,12 +372,17 @@ class WouldYouRatherGame {
     
     // Pokazywanie osiągnięć
     showAchievementPopup(achievements) {
-        achievements.forEach((achievement, index) => {
-            setTimeout(() => {
-                // Prosty alert na razie, później zrobimy ładny popup
-                alert(`🎉 Achievement Unlocked!\n\n${achievement.name}\n${achievement.description}`);
-            }, index * 1000);
-        });
+        // Użyj nowego AchievementPopup zamiast alert
+        if (window.AchievementPopup) {
+            window.AchievementPopup.showMultiple(achievements);
+        } else {
+            // Fallback do alert jeśli popup nie jest załadowany
+            achievements.forEach((achievement, index) => {
+                setTimeout(() => {
+                    alert(`🎉 Achievement Unlocked!\n\n${achievement.name}\n${achievement.description}`);
+                }, index * 1000);
+            });
+        }
     }
     
     calculatePersonality() {

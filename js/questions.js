@@ -5,152 +5,152 @@ const QUESTIONS_DB = {
     survival_mode: [
         {
             id: 'surv_1',
-            optionA: 'Save yourself with 100% certainty',
-            optionB: 'Risk 50/50 chance to save yourself and others',
+            optionA: 'Save yourself with 100% certainty?',
+            optionB: 'Risk 50/50 chance to save yourself and others?',
             typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 2 }
         },
         {
             id: 'surv_2',
-            optionA: 'Survive with people you don\'t trust',
-            optionB: 'Survive alone with helpful hallucinations',
+            optionA: 'Survive with people you don\'t trust?',
+            optionB: 'Survive alone with helpful hallucinations?',
             typePoints: { cactus_hugger: -1, polar_bear_mode: 1, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_3',
-            optionA: 'Have a radio that only receives messages',
-            optionB: 'Have one that only sends but never know if anyone hears',
+            optionA: 'Have a radio that only receives messages?',
+            optionB: 'Have one that only sends but never know if anyone hears?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: -1, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_4',
-            optionA: 'Be the leader everyone blames when things go wrong',
-            optionB: 'Be the follower who knows better but can\'t speak up',
+            optionA: 'Be the leader everyone blames when things go wrong?',
+            optionB: 'Be the follower who knows better but can\'t speak up?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: 2, concrete_survivor: -1 }
         },
         {
             id: 'surv_5',
-            optionA: 'Know which of your group won\'t make it',
-            optionB: 'Believe everyone has equal chances',
+            optionA: 'Know which of your group won\'t make it?',
+            optionB: 'Believe everyone has equal chances?',
             typePoints: { cactus_hugger: 2, polar_bear_mode: -1, jungle_vip: 0, concrete_survivor: 1 }
         },
         {
             id: 'surv_6',
-            optionA: 'Trust a stranger who claims to know the way out',
-            optionB: 'Stay in familiar danger',
+            optionA: 'Trust a stranger who claims to know the way out?',
+            optionB: 'Stay in familiar danger?',
             typePoints: { cactus_hugger: -1, polar_bear_mode: 0, jungle_vip: 2, concrete_survivor: -1 }
         },
         {
             id: 'surv_7',
-            optionA: 'Tell a seriously injured person the truth about their chances',
-            optionB: 'Let them hope until the end',
+            optionA: 'Tell a seriously injured person the truth about their chances?',
+            optionB: 'Let them hope until the end?',
             typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_8',
-            optionA: 'Hear the thoughts of your survival group',
-            optionB: 'Have them hear yours',
+            optionA: 'Hear the thoughts of your survival group?',
+            optionB: 'Have them hear yours?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 1, jungle_vip: -1, concrete_survivor: 0 }
         },
         {
             id: 'surv_9',
-            optionA: 'Endure constant 40°C heat with shade',
-            optionB: 'Endure -20°C cold with shelter materials',
+            optionA: 'Endure constant 40°C heat with shade?',
+            optionB: 'Endure -20°C cold with shelter materials?',
             typePoints: { cactus_hugger: 2, polar_bear_mode: -2, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_10',
-            optionA: 'Live where edible plants are abundant but all animals are predators',
-            optionB: 'Live where animals are harmless but vegetation is 90% toxic',
+            optionA: 'Live where edible plants are abundant but all animals are predators?',
+            optionB: 'Live where animals are harmless but vegetation is 90% toxic?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: 1, concrete_survivor: -1 }
         },
         {
             id: 'surv_11',
-            optionA: 'Live where rain falls when you\'re sad and sun shines when happy',
-            optionB: 'Live where your energy level controls the temperature around you',
+            optionA: 'Live where rain falls when you\'re sad and sun shines when happy?',
+            optionB: 'Live where your energy level controls the temperature around you?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 1, jungle_vip: 0, concrete_survivor: 0 }
         },
         {
             id: 'surv_12',
-            optionA: 'Face nature that warns you 10 minutes before disasters but they\'re 3x stronger',
-            optionB: 'Face normal disasters with no warning',
+            optionA: 'Face nature that warns you 10 minutes before disasters but they\'re 3x stronger?',
+            optionB: 'Face normal disasters with no warning?',
             typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_13',
-            optionA: 'Survive where storms last 5 minutes but happen hourly',
-            optionB: 'Survive where they last a week but come once a month',
+            optionA: 'Survive where storms last 5 minutes but happen hourly?',
+            optionB: 'Survive where they last a week but come once a month?',
             typePoints: { cactus_hugger: -1, polar_bear_mode: 1, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_14',
-            optionA: 'Survive solo with all supplies you need',
-            optionB: 'Survive with a group but constant resource shortage',
+            optionA: 'Survive solo with all supplies you need?',
+            optionB: 'Survive with a group but constant resource shortage?',
             typePoints: { cactus_hugger: 2, polar_bear_mode: -1, jungle_vip: -2, concrete_survivor: 1 }
         },
         {
             id: 'surv_15',
-            optionA: 'Survive a toxic disaster where you\'re immune but a carrier',
-            optionB: 'Be vulnerable but can\'t spread it',
+            optionA: 'Survive a toxic disaster where you\'re immune but a carrier?',
+            optionB: 'Be vulnerable but can\'t spread it?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_16',
-            optionA: 'Share your only map with group',
-            optionB: 'Memorize it and destroy so no one can take it',
+            optionA: 'Share your only map with the group?',
+            optionB: 'Memorize it and destroy so no one can take it?',
             typePoints: { cactus_hugger: -1, polar_bear_mode: 0, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_17',
-            optionA: 'Recover from any injury overnight but feel intense pain',
-            optionB: 'Heal slowly but feel no pain warnings',
+            optionA: 'Recover from any injury overnight but feel intense pain?',
+            optionB: 'Heal slowly but feel no pain warnings?',
             typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: 0, concrete_survivor: -1 }
         },
         {
             id: 'surv_18',
-            optionA: 'Maintain perfect health but age twice as fast',
-            optionB: 'Age normally but get sick easily',
+            optionA: 'Maintain perfect health but age twice as fast?',
+            optionB: 'Age normally but get sick easily?',
             typePoints: { cactus_hugger: 1, polar_bear_mode: -1, jungle_vip: 0, concrete_survivor: 0 }
         },
         {
             id: 'surv_19',
-            optionA: 'Remember survival skills perfectly but forget your past',
-            optionB: 'Keep memories but skills fade daily',
+            optionA: 'Remember survival skills perfectly but forget your past?',
+            optionB: 'Keep memories but skills fade daily?',
             typePoints: { cactus_hugger: 2, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 0 }
         },
         {
             id: 'surv_20',
-            optionA: 'Master any one survival skill perfectly but forget all others',
-            optionB: 'Be moderately good at all survival skills',
+            optionA: 'Master any one survival skill perfectly but forget all others?',
+            optionB: 'Be moderately good at all survival skills?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 2 }
         },
         {
             id: 'surv_21',
-            optionA: 'Face predictable natural disasters monthly',
-            optionB: 'Face random accidents weekly',
+            optionA: 'Face predictable natural disasters monthly?',
+            optionB: 'Face random accidents weekly?',
             typePoints: { cactus_hugger: 1, polar_bear_mode: 0, jungle_vip: -1, concrete_survivor: 1 }
         },
         {
             id: 'surv_22',
-            optionA: 'Know medicine for any illness but ingredients are always 100 miles away',
-            optionB: 'Have remedies nearby but guess usage',
+            optionA: 'Know medicine for any illness but ingredients are always 100 miles away?',
+            optionB: 'Have remedies nearby but guess how to use them?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: -1, jungle_vip: 1, concrete_survivor: 0 }
         },
         {
             id: 'surv_23',
-            optionA: 'Your presence calms wild animals but attracts insects',
-            optionB: 'Repel all bugs but make animals aggressive',
+            optionA: 'Have your presence calm wild animals but attract insects?',
+            optionB: 'Repel all bugs but make animals aggressive?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 0, jungle_vip: 2, concrete_survivor: -1 }
         },
         {
             id: 'surv_24',
-            optionA: 'Burn irreplaceable shelter for warmth in deadly cold',
-            optionB: 'Risk hypothermia to keep it',
+            optionA: 'Burn irreplaceable shelter for warmth in deadly cold?',
+            optionB: 'Risk hypothermia to keep it?',
             typePoints: { cactus_hugger: -1, polar_bear_mode: 2, jungle_vip: 0, concrete_survivor: 0 }
         },
         {
             id: 'surv_25',
-            optionA: 'Eat questionable food now while strong',
-            optionB: 'Save it for when you\'re desperate but weaker',
+            optionA: 'Eat questionable food now while strong?',
+            optionB: 'Save it for when you\'re desperate but weaker?',
             typePoints: { cactus_hugger: 0, polar_bear_mode: 1, jungle_vip: 1, concrete_survivor: -1 }
         }
     ],
@@ -158,152 +158,152 @@ const QUESTIONS_DB = {
     social_life: [
         {
             id: 'soc_1',
-            optionA: 'Master the art of ending conversations gracefully',
-            optionB: 'Never feel awkward silence in any situation',
+            optionA: 'Master the art of ending conversations gracefully?',
+            optionB: 'Never feel awkward silence in any situation?',
             typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: 0 }
         },
         {
             id: 'soc_2',
-            optionA: 'Make everyone\'s day 10% better but never get credit',
-            optionB: 'Be thanked constantly for things you didn\'t actually do',
+            optionA: 'Make everyone\'s day 10% better but never get credit?',
+            optionB: 'Be thanked constantly for things you didn\'t actually do?',
             typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: 0, ghost_protocol: 2 }
         },
         {
             id: 'soc_3',
-            optionA: 'Have all your jokes land perfectly but no one remembers you told them',
-            optionB: 'Be known as hilarious but never actually make anyone laugh',
+            optionA: 'Have all your jokes land perfectly but no one remembers you told them?',
+            optionB: 'Be known as hilarious but never actually make anyone laugh?',
             typePoints: { disco_disaster: 2, blanket_burrito: -1, social_gps: 1, ghost_protocol: -1 }
         },
         {
             id: 'soc_4',
-            optionA: 'Feel everyone\'s emotions as your own for one hour each day',
-            optionB: 'Be emotionally numb except for one random hour daily',
+            optionA: 'Feel everyone\'s emotions as your own for one hour each day?',
+            optionB: 'Be emotionally numb except for one random hour daily?',
             typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_5',
-            optionA: 'Be everyone\'s first choice for fun but last choice for serious talks',
-            optionB: 'Be sought for wisdom but never invited to celebrations',
+            optionA: 'Be everyone\'s first choice for fun but last choice for serious talks?',
+            optionB: 'Be sought for wisdom but never invited to celebrations?',
             typePoints: { disco_disaster: 2, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
         },
         {
             id: 'soc_6',
-            optionA: 'Your advice always works but only for others, never for you',
-            optionB: 'You can solve your own problems easily but can\'t help anyone else',
+            optionA: 'Have your advice always work but only for others, never for you?',
+            optionB: 'Solve your own problems easily but can\'t help anyone else?',
             typePoints: { disco_disaster: 0, blanket_burrito: 0, social_gps: 2, ghost_protocol: -1 }
         },
         {
             id: 'soc_7',
-            optionA: 'Every group photo you\'re in becomes iconic but you always look terrible',
-            optionB: 'Look amazing in every photo but they all get deleted or lost',
+            optionA: 'Have every group photo you\'re in become iconic but you always look terrible?',
+            optionB: 'Look amazing in every photo but they all get deleted or lost?',
             typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_8',
-            optionA: 'Have a magnetic personality that attracts people you don\'t like',
-            optionB: 'Repel everyone initially but form incredible bonds with those who stay',
+            optionA: 'Have a magnetic personality that attracts people you don\'t like?',
+            optionB: 'Repel everyone initially but form incredible bonds with those who stay?',
             typePoints: { disco_disaster: 1, blanket_burrito: -2, social_gps: 0, ghost_protocol: 2 }
         },
         {
             id: 'soc_9',
-            optionA: 'Always say things that make people think deeply but kill the mood',
-            optionB: 'Keep conversations light and fun but never have meaningful exchanges',
+            optionA: 'Always say things that make people think deeply but kill the mood?',
+            optionB: 'Keep conversations light and fun but never have meaningful exchanges?',
             typePoints: { disco_disaster: -2, blanket_burrito: 1, social_gps: 0, ghost_protocol: 1 }
         },
         {
             id: 'soc_10',
-            optionA: 'Be famous for someone else\'s greatest achievement',
-            optionB: 'Never get recognition for your own life-changing work',
+            optionA: 'Be famous for someone else\'s greatest achievement?',
+            optionB: 'Never get recognition for your own life-changing work?',
             typePoints: { disco_disaster: 1, blanket_burrito: 0, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_11',
-            optionA: 'Be the person everyone confides in during crisis but ghosts after',
-            optionB: 'Only hear from people during their best moments but miss their struggles',
+            optionA: 'Be the person everyone confides in during crisis but ghosts after?',
+            optionB: 'Only hear from people during their best moments but miss their struggles?',
             typePoints: { disco_disaster: -1, blanket_burrito: 0, social_gps: 2, ghost_protocol: 1 }
         },
         {
             id: 'soc_12',
-            optionA: 'Your mistakes become everyone\'s favorite funny stories',
-            optionB: 'Be remembered as perfect but incredibly boring',
+            optionA: 'Have your mistakes become everyone\'s favorite funny stories?',
+            optionB: 'Be remembered as perfect but incredibly boring?',
             typePoints: { disco_disaster: 2, blanket_burrito: -1, social_gps: 1, ghost_protocol: -1 }
         },
         {
             id: 'soc_13',
-            optionA: 'Your sarcasm is always taken seriously by everyone',
-            optionB: 'Your genuine sincerity always sounds sarcastic',
+            optionA: 'Have your sarcasm always taken seriously by everyone?',
+            optionB: 'Have your genuine sincerity always sound sarcastic?',
             typePoints: { disco_disaster: 0, blanket_burrito: 1, social_gps: -1, ghost_protocol: 2 }
         },
         {
             id: 'soc_14',
-            optionA: 'Be the tech wizard who kills every social situation',
-            optionB: 'Navigate any social moment perfectly but technology dies at your touch',
+            optionA: 'Be the tech wizard who kills every social situation?',
+            optionB: 'Navigate any social moment perfectly but technology dies at your touch?',
             typePoints: { disco_disaster: -2, blanket_burrito: 2, social_gps: -1, ghost_protocol: 1 }
         },
         {
             id: 'soc_15',
-            optionA: 'Remember every conversation in perfect detail but others forget',
-            optionB: 'Have amnesia after each chat but leave unforgettable impressions',
+            optionA: 'Remember every conversation in perfect detail but others forget?',
+            optionB: 'Have amnesia after each chat but leave unforgettable impressions?',
             typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: 0, ghost_protocol: 2 }
         },
         {
             id: 'soc_16',
-            optionA: 'Be everyone\'s plus-one but never the main invite',
-            optionB: 'Always be invited directly but have no one to bring',
+            optionA: 'Be everyone\'s plus-one but never the main invite?',
+            optionB: 'Always be invited directly but have no one to bring?',
             typePoints: { disco_disaster: 0, blanket_burrito: 1, social_gps: 2, ghost_protocol: -2 }
         },
         {
             id: 'soc_17',
-            optionA: 'Your presence makes shy people confident but confident people nervous',
-            optionB: 'Bring out everyone\'s worst qualities but they still enjoy your company',
+            optionA: 'Have your presence make shy people confident but confident people nervous?',
+            optionB: 'Bring out everyone\'s worst qualities but they still enjoy your company?',
             typePoints: { disco_disaster: 1, blanket_burrito: -1, social_gps: 2, ghost_protocol: 0 }
         },
         {
             id: 'soc_18',
-            optionA: 'Have every goodbye feel final even when it\'s not',
-            optionB: 'Never properly say goodbye to anyone who matters',
+            optionA: 'Have every goodbye feel final even when it\'s not?',
+            optionB: 'Never properly say goodbye to anyone who matters?',
             typePoints: { disco_disaster: -1, blanket_burrito: 0, social_gps: -1, ghost_protocol: 2 }
         },
         {
             id: 'soc_19',
-            optionA: 'Your friends only exist in separate, non-overlapping groups',
-            optionB: 'All your friends know each other but you\'re the least favorite',
+            optionA: 'Have your friends only exist in separate, non-overlapping groups?',
+            optionB: 'Have all your friends know each other but you\'re the least favorite?',
             typePoints: { disco_disaster: -1, blanket_burrito: 1, social_gps: -2, ghost_protocol: 2 }
         },
         {
             id: 'soc_20',
-            optionA: 'Create best friendships between others then lose touch with both',
-            optionB: 'Break up every friend group you join but keep individual friendships',
+            optionA: 'Create best friendships between others then lose touch with both?',
+            optionB: 'Break up every friend group you join but keep individual friendships?',
             typePoints: { disco_disaster: 0, blanket_burrito: -1, social_gps: 2, ghost_protocol: 1 }
         },
         {
             id: 'soc_21',
-            optionA: 'Your presence makes every event better but you never enjoy them',
-            optionB: 'Have the time of your life everywhere but kill the vibe for others',
+            optionA: 'Have your presence make every event better but you never enjoy them?',
+            optionB: 'Have the time of your life everywhere but kill the vibe for others?',
             typePoints: { disco_disaster: -2, blanket_burrito: 1, social_gps: 2, ghost_protocol: 0 }
         },
         {
             id: 'soc_22',
-            optionA: 'Form instant deep connections that last exactly one year',
-            optionB: 'Take five years to make friends but they last forever',
+            optionA: 'Form instant deep connections that last exactly one year?',
+            optionB: 'Take five years to make friends but they last forever?',
             typePoints: { disco_disaster: 2, blanket_burrito: -2, social_gps: 1, ghost_protocol: 0 }
         },
         {
             id: 'soc_23',
-            optionA: 'Know exactly what makes people happy but it never works when you try',
-            optionB: 'Accidentally make people happy without understanding how',
+            optionA: 'Know exactly what makes people happy but it never works when you try?',
+            optionB: 'Accidentally make people happy without understanding how?',
             typePoints: { disco_disaster: -1, blanket_burrito: 0, social_gps: 1, ghost_protocol: 2 }
         },
         {
             id: 'soc_24',
-            optionA: 'Have everyone trust you with secrets you wish you didn\'t know',
-            optionB: 'Be completely trustworthy but no one believes it',
+            optionA: 'Have everyone trust you with secrets you wish you didn\'t know?',
+            optionB: 'Be completely trustworthy but no one believes it?',
             typePoints: { disco_disaster: 0, blanket_burrito: 1, social_gps: 2, ghost_protocol: -1 }
         },
         {
             id: 'soc_25',
-            optionA: 'Be everyone\'s favorite person to complain to about others',
-            optionB: 'Never hear complaints but know you\'re being complained about',
+            optionA: 'Be everyone\'s favorite person to complain to about others?',
+            optionB: 'Never hear complaints but know you\'re being complained about?',
             typePoints: { disco_disaster: -1, blanket_burrito: 2, social_gps: 1, ghost_protocol: -2 }
         }
     ],
@@ -311,63 +311,153 @@ const QUESTIONS_DB = {
     food_fight: [
         {
             id: 'food_1',
-            optionA: 'Eat only pizza for the rest of your life',
-            optionB: 'Never eat pizza again',
-            typePoints: { fancy_pants: -2, couch_potato_pro: 2, spice_warrior: -1, kale_knight: -1 }
+            optionA: 'Eat cereal with orange juice forever?',
+            optionB: 'Put milk on pizza forever?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 0, spice_warrior: 1, kale_knight: -2 }
         },
         {
             id: 'food_2',
-            optionA: 'Have a personal chef',
-            optionB: 'Be an amazing cook yourself',
-            typePoints: { fancy_pants: 1, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 0 }
+            optionA: 'Dip everything in chocolate?',
+            optionB: 'Put hot sauce on everything?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: 2, kale_knight: -1 }
         },
         {
             id: 'food_3',
-            optionA: 'Only eat at Michelin star restaurants',
-            optionB: 'Only eat street food',
-            typePoints: { fancy_pants: 2, couch_potato_pro: -1, spice_warrior: -1, kale_knight: 0 }
+            optionA: 'Eat only foods from TV commercials?',
+            optionB: 'Avoid all advertised foods forever?',
+            typePoints: { fancy_pants: -2, couch_potato_pro: 2, spice_warrior: 0, kale_knight: 1 }
         },
         {
             id: 'food_4',
-            optionA: 'Give up chocolate forever',
-            optionB: 'Give up cheese forever',
-            typePoints: { fancy_pants: 0, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 1 }
+            optionA: 'Only eat foods you\'ve never tried before?',
+            optionB: 'Eat the same 5 meals forever?',
+            typePoints: { fancy_pants: 1, couch_potato_pro: -2, spice_warrior: 2, kale_knight: 0 }
         },
         {
             id: 'food_5',
-            optionA: 'Eat breakfast for every meal',
-            optionB: 'Never eat breakfast again',
-            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: -1, kale_knight: 0 }
+            optionA: 'Share every meal with a stranger?',
+            optionB: 'Always eat completely alone?',
+            typePoints: { fancy_pants: 1, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 0 }
         },
         {
             id: 'food_6',
-            optionA: 'Try every weird food in the world',
-            optionB: 'Stick to familiar foods forever',
-            typePoints: { fancy_pants: 0, couch_potato_pro: -2, spice_warrior: 2, kale_knight: 0 }
+            optionA: 'Only eat at sketchy food trucks?',
+            optionB: 'Only cook with sale ingredients?',
+            typePoints: { fancy_pants: -2, couch_potato_pro: 0, spice_warrior: 2, kale_knight: -1 }
         },
         {
             id: 'food_7',
-            optionA: 'Live in a mansion with no kitchen',
-            optionB: 'Live in a tiny house with a dream kitchen',
-            typePoints: { fancy_pants: -1, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 0 }
+            optionA: 'Give up cheese forever?',
+            optionB: 'Give up bread forever?',
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 1 }
         },
         {
             id: 'food_8',
-            optionA: 'Only eat organic, locally-sourced food',
-            optionB: 'Eat whatever you want with no health consequences',
-            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 2 }
+            optionA: 'Have your favorite food lose all flavor?',
+            optionB: 'Never be able to eat it again?',
+            typePoints: { fancy_pants: 1, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 0 }
         },
         {
             id: 'food_9',
-            optionA: 'Have every meal be a surprise',
-            optionB: 'Plan every meal for the rest of your life',
-            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 2, kale_knight: -1 }
+            optionA: 'Have all your food be 10% too salty?',
+            optionB: 'Have all your food be 10% too sweet?',
+            typePoints: { fancy_pants: 0, couch_potato_pro: 0, spice_warrior: 1, kale_knight: -1 }
         },
         {
             id: 'food_10',
-            optionA: 'Only eat spicy food',
-            optionB: 'Never taste spice again',
-            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 1, kale_knight: 0 }
+            optionA: 'Eat your least favorite food once a week?',
+            optionB: 'Never eat your favorite food again?',
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 1, kale_knight: 1 }
+        },
+        {
+            id: 'food_11',
+            optionA: 'Always be the one who cooks?',
+            optionB: 'Always be the one who cleans?',
+            typePoints: { fancy_pants: 1, couch_potato_pro: -2, spice_warrior: 0, kale_knight: 1 }
+        },
+        {
+            id: 'food_12',
+            optionA: 'Eat before everyone else is served?',
+            optionB: 'Eat after everyone else is finished?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: 0, kale_knight: 0 }
+        },
+        {
+            id: 'food_13',
+            optionA: 'Always get the wrong order delivered?',
+            optionB: 'Always have missing items?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 0, spice_warrior: 1, kale_knight: 0 }
+        },
+        {
+            id: 'food_14',
+            optionA: 'Always be hungry an hour after eating?',
+            optionB: 'Always feel too full?',
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 2 }
+        },
+        {
+            id: 'food_15',
+            optionA: 'Have your food come out wrong but fast?',
+            optionB: 'Have it perfect but an hour late?',
+            typePoints: { fancy_pants: -2, couch_potato_pro: 2, spice_warrior: 0, kale_knight: 0 }
+        },
+        {
+            id: 'food_16',
+            optionA: 'Eat at a place with rude staff but delicious food?',
+            optionB: 'Eat at a place with friendly staff but terrible food?',
+            typePoints: { fancy_pants: 2, couch_potato_pro: 0, spice_warrior: 1, kale_knight: -1 }
+        },
+        {
+            id: 'food_17',
+            optionA: 'Eat spaghetti with no sauce?',
+            optionB: 'Eat sauce with no spaghetti?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 0, spice_warrior: 0, kale_knight: 1 }
+        },
+        {
+            id: 'food_18',
+            optionA: 'Drink flat soda?',
+            optionB: 'Drink watered-down juice?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: 0, kale_knight: 0 }
+        },
+        {
+            id: 'food_19',
+            optionA: 'Eat only dark chocolate?',
+            optionB: 'Eat only white chocolate?',
+            typePoints: { fancy_pants: 2, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 1 }
+        },
+        {
+            id: 'food_20',
+            optionA: 'Eat food that\'s always one day past its best?',
+            optionB: 'Eat food that needs one more day to ripen?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: 1, kale_knight: -1 }
+        },
+        {
+            id: 'food_21',
+            optionA: 'Have all drinks taste like your last meal?',
+            optionB: 'Have all foods taste like your last drink?',
+            typePoints: { fancy_pants: 0, couch_potato_pro: 0, spice_warrior: 2, kale_knight: -1 }
+        },
+        {
+            id: 'food_22',
+            optionA: 'Give up your favorite food forever?',
+            optionB: 'Eat only that food for a year?',
+            typePoints: { fancy_pants: 1, couch_potato_pro: -2, spice_warrior: 0, kale_knight: 1 }
+        },
+        {
+            id: 'food_23',
+            optionA: 'Eat with clean hands from a dirty plate?',
+            optionB: 'Eat with dirty hands from a clean plate?',
+            typePoints: { fancy_pants: -2, couch_potato_pro: 0, spice_warrior: 1, kale_knight: 0 }
+        },
+        {
+            id: 'food_24',
+            optionA: 'Eat your daily meals in random order?',
+            optionB: 'Eat all courses mixed together?',
+            typePoints: { fancy_pants: -1, couch_potato_pro: 1, spice_warrior: 1, kale_knight: -1 }
+        },
+        {
+            id: 'food_25',
+            optionA: 'Forget the taste of everything you\'ve eaten?',
+            optionB: 'Remember the taste but never eat it again?',
+            typePoints: { fancy_pants: 0, couch_potato_pro: -1, spice_warrior: 0, kale_knight: 2 }
         }
     ],
     
