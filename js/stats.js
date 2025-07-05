@@ -189,6 +189,43 @@ class StatsManager {
                 description: 'Try all 6 categories'
             });
         }
+
+        // Question Master - 500 questions
+        if (this.stats.totalQuestions >= 500 && !this.hasAchievement('question_master')) {
+            newAchievements.push({
+                id: 'question_master',
+                name: 'Question Master',
+                description: 'Answer 500 questions'
+            });
+        }
+
+        // Personality Collector - 10 different personalities
+        const uniquePersonalities = new Set(this.stats.personalityHistory.map(p => p.type)).size;
+        if (uniquePersonalities >= 10 && !this.hasAchievement('personality_collector')) {
+            newAchievements.push({
+                id: 'personality_collector',
+                name: 'Personality Collector',
+                description: 'Unlock 10 different personalities'
+            });
+        }
+
+        // Streak Master - 30 days
+        if (this.stats.longestStreak >= 30 && !this.hasAchievement('streak_master')) {
+            newAchievements.push({
+                id: 'streak_master',
+                name: 'Streak Master',
+                description: 'Achieve a 30 day streak'
+            });
+        }
+
+        // Champion - 100 games
+        if (this.stats.gamesPlayed >= 100 && !this.hasAchievement('dedicated_player')) {
+            newAchievements.push({
+                id: 'dedicated_player',
+                name: 'PartyBoard Champion',
+                description: 'Play 100 games'
+            });
+        }
         
         // Save new achievements
         newAchievements.forEach(ach => {
