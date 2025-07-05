@@ -34,6 +34,10 @@
                     <div class="progress-fill" id="progress-fill"></div>
                 </div>
             </div>
+            <button id="stats-button" class="stats-button" aria-label="View your statistics">
+                <i data-lucide="bar-chart-2" class="icon-small"></i>
+                <span class="stats-label">Stats</span>
+            </button>
         </header>
 
         <!-- Category Selection Screen -->
@@ -178,12 +182,35 @@
         </div>
     </div>
 
+    <!-- Stats Modal -->
+    <div id="stats-modal" class="modal stats-modal" style="display: none;">
+        <div class="modal-content stats-content">
+            <div class="stats-header">
+                <h2>📊 Your Stats</h2>
+                <button class="close-button" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="stats-body">
+                <!-- Content will be dynamically generated -->
+            </div>
+            
+            <div class="stats-footer">
+                <button class="btn btn-secondary" id="reset-stats-button">
+                    Reset All Stats
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/analytics.js"></script>
     <script src="js/stats.js"></script>
     <script src="js/questions.js"></script>
     <script src="js/share.js"></script>
     <script src="js/achievement-popup.js"></script>
+    <script src="js/stats-modal.js"></script>
     <script src="js/game.js"></script>
     
     <!-- Initialize Lucide Icons -->

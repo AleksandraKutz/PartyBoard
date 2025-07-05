@@ -464,125 +464,305 @@ const QUESTIONS_DB = {
     jet_set: [
         {
             id: 'trav_1',
-            optionA: 'Travel to 100 countries but never revisit any',
-            optionB: 'Only visit 10 countries but go as often as you want',
-            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
+            optionA: 'Have a pet that travels with you everywhere?',
+            optionB: 'Make a new friend in each place?',
+            typePoints: { wrong_way_wanderer: 0, resort_royalty: -1, champagne_checkpoint: 1, couch_surfing_ceo: 2 }
         },
         {
             id: 'trav_2',
-            optionA: 'Always travel first class but only once a year',
-            optionB: 'Travel economy but go anywhere anytime',
-            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 2, couch_surfing_ceo: -2 }
+            optionA: 'Get lost in a Moroccan souk without GPS?',
+            optionB: 'Get lost in Tokyo subway without GPS?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: -1, couch_surfing_ceo: 1 }
         },
         {
             id: 'trav_3',
-            optionA: 'Sleep in a different place every night for a year',
-            optionB: 'Never leave your hometown again',
-            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: -1, couch_surfing_ceo: 2 }
+            optionA: 'Sleep in a tent on a cliff edge?',
+            optionB: 'Sleep in a haunted castle?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
         },
         {
             id: 'trav_4',
-            optionA: 'Travel only by boat',
-            optionB: 'Never see the ocean again',
-            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: 0, couch_surfing_ceo: 0 }
+            optionA: 'Be a travel blogger with no home base?',
+            optionB: 'Settle in your dream country but never leave?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: 0, champagne_checkpoint: -1, couch_surfing_ceo: 2 }
         },
         {
             id: 'trav_5',
-            optionA: 'Have unlimited money for travel but only 2 weeks vacation per year',
-            optionB: 'Have unlimited time but a tight budget',
-            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 1, couch_surfing_ceo: -1 }
+            optionA: 'Travel only during rainy seasons?',
+            optionB: 'Travel only during major holidays?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: -2, couch_surfing_ceo: 2 }
         },
         {
             id: 'trav_6',
-            optionA: 'Always travel solo',
-            optionB: 'Always travel in a group of 10+',
-            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
+            optionA: 'Carry a 20kg backpack everywhere?',
+            optionB: 'Push a suitcase with a squeaky wheel?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -2, champagne_checkpoint: 0, couch_surfing_ceo: 2 }
         },
         {
             id: 'trav_7',
-            optionA: 'Visit every museum in the world',
-            optionB: 'Visit every beach in the world',
-            typePoints: { wrong_way_wanderer: 0, resort_royalty: 0, champagne_checkpoint: 0, couch_surfing_ceo: 0 }
+            optionA: 'Swim with jellyfish in Thailand?',
+            optionB: 'Hike near volcanoes in Iceland?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: 0, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
         },
         {
             id: 'trav_8',
-            optionA: 'Stay in 5-star hotels with terrible locations',
-            optionB: 'Camp in the most beautiful places on Earth',
-            typePoints: { wrong_way_wanderer: -1, resort_royalty: 1, champagne_checkpoint: 2, couch_surfing_ceo: -2 }
+            optionA: 'Visit a new country nightly but forget where you are?',
+            optionB: 'Stay in one place but dream vividly of travel?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: -1, couch_surfing_ceo: 0 }
         },
         {
             id: 'trav_9',
-            optionA: 'Speak every language but never travel',
-            optionB: 'Travel everywhere but only speak your native language',
-            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 0, couch_surfing_ceo: 0 }
+            optionA: 'Live one year in airports?',
+            optionB: 'Live one year in roadside motels?',
+            typePoints: { wrong_way_wanderer: 0, resort_royalty: -1, champagne_checkpoint: 1, couch_surfing_ceo: 2 }
         },
         {
             id: 'trav_10',
-            optionA: 'Have a year-long road trip',
-            optionB: 'Have 52 weekend trips',
-            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: -1, couch_surfing_ceo: 2 }
+            optionA: 'Travel with a talking parrot?',
+            optionB: 'Travel with a silent psychic cat?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: 0, champagne_checkpoint: 1, couch_surfing_ceo: 0 }
+        },
+        {
+            id: 'trav_11',
+            optionA: 'Travel with unlimited batteries?',
+            optionB: 'Travel with unlimited snacks?',
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 0, champagne_checkpoint: 2, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_12',
+            optionA: 'Always get upgraded to first class?',
+            optionB: 'Always have a private airport lounge?',
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 1, champagne_checkpoint: 2, couch_surfing_ceo: -2 }
+        },
+        {
+            id: 'trav_13',
+            optionA: 'Lose your camera on the last day?',
+            optionB: 'Lose your passport on the last day?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -2, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_14',
+            optionA: 'Visit a country that feels instantly like home?',
+            optionB: 'Visit one that constantly challenges your views?',
+            typePoints: { wrong_way_wanderer: -1, resort_royalty: 2, champagne_checkpoint: 1, couch_surfing_ceo: -1 }
+        },
+        {
+            id: 'trav_15',
+            optionA: 'Explore a place that doesn\'t exist on any map?',
+            optionB: 'Revisit a place that exists only in your memory?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -1, champagne_checkpoint: -1, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_16',
+            optionA: 'Travel where no one knows your name?',
+            optionB: 'Travel where everyone knows your story?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: 0, couch_surfing_ceo: 2 }
+        },
+        {
+            id: 'trav_17',
+            optionA: 'Visit a country where you don\'t speak the language?',
+            optionB: 'Visit where you speak fluently but don\'t understand the culture?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -2, champagne_checkpoint: -1, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_18',
+            optionA: 'Take a detour to a hidden village?',
+            optionB: 'Take a detour to a secret beach?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: 0, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_19',
+            optionA: 'Have amazing conversations with strangers abroad?',
+            optionB: 'Get perfect travel photos without trying?',
+            typePoints: { wrong_way_wanderer: 0, resort_royalty: -1, champagne_checkpoint: 1, couch_surfing_ceo: 2 }
+        },
+        {
+            id: 'trav_20',
+            optionA: 'Sleep under northern lights in the cold?',
+            optionB: 'Sleep under desert stars in the heat?',
+            typePoints: { wrong_way_wanderer: 1, resort_royalty: -1, champagne_checkpoint: 0, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_21',
+            optionA: 'Plan every detail of your trip?',
+            optionB: 'Travel without any reservations?',
+            typePoints: { wrong_way_wanderer: -2, resort_royalty: 1, champagne_checkpoint: 2, couch_surfing_ceo: -1 }
+        },
+        {
+            id: 'trav_22',
+            optionA: 'Find a 100-year-old letter in your hotel?',
+            optionB: 'Leave a letter for someone in 100 years?',
+            typePoints: { wrong_way_wanderer: 0, resort_royalty: 0, champagne_checkpoint: 1, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_23',
+            optionA: 'Discover a place that changes your values?',
+            optionB: 'Find one that confirms all your beliefs?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -1, champagne_checkpoint: -1, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_24',
+            optionA: 'Get lost and meet someone life-changing?',
+            optionB: 'Follow the map and see everything planned?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: -1, champagne_checkpoint: -2, couch_surfing_ceo: 1 }
+        },
+        {
+            id: 'trav_25',
+            optionA: 'Get a free ticket to an unknown country?',
+            optionB: 'Get a free ticket to your favorite place?',
+            typePoints: { wrong_way_wanderer: 2, resort_royalty: 1, champagne_checkpoint: -1, couch_surfing_ceo: 0 }
         }
     ],
     
     future_talk: [
         {
             id: 'tech_1',
-            optionA: 'Live in a fully automated smart home',
-            optionB: 'Live completely off-grid',
-            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -1 }
+            optionA: 'Have dinner with your future self?',
+            optionB: 'Have dinner with your great-great-grandchild?',
+            typePoints: { wifi_whisperer: 0, analog_angel: 0, update_dodger: 1, digital_detox_guru: -1 }
         },
         {
             id: 'tech_2',
-            optionA: 'Have a phone with infinite battery',
-            optionB: 'Have wifi everywhere you go',
-            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: 1, digital_detox_guru: 0 }
+            optionA: 'Work on Mars as a colony architect?',
+            optionB: 'Stay on Earth reversing climate change?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: 1 }
         },
         {
             id: 'tech_3',
-            optionA: 'Be able to control technology with your mind',
-            optionB: 'Have technology that reads your emotions',
-            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -1 }
+            optionA: 'Use time travel once to fix a regret?',
+            optionB: 'Use it once to relive a perfect moment?',
+            typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 0 }
         },
         {
             id: 'tech_4',
-            optionA: 'Live in a virtual reality world',
-            optionB: 'Never use VR/AR technology',
+            optionA: 'Live where dreams can be recorded?',
+            optionB: 'Live where memories can be erased at will?',
             typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
         },
         {
             id: 'tech_5',
-            optionA: 'Have a robot assistant',
-            optionB: 'Have a human assistant',
-            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -1 }
+            optionA: 'Let algorithms find your friends?',
+            optionB: 'Let algorithms choose your career?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -2 }
         },
         {
             id: 'tech_6',
-            optionA: 'Time travel to the past',
-            optionB: 'Time travel to the future',
-            typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 0 }
+            optionA: 'Have a brain chip for instant learning?',
+            optionB: 'Have eyes that record everything?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
         },
         {
             id: 'tech_7',
-            optionA: 'Have all your memories stored digitally',
-            optionB: 'Keep memories only in your mind',
-            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
+            optionA: 'Have a robot that always tells harsh truths?',
+            optionB: 'Have one that lies to keep you happy?',
+            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: 0, digital_detox_guru: 0 }
         },
         {
             id: 'tech_8',
-            optionA: 'Work in the metaverse',
-            optionB: 'Only work in physical offices',
-            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
+            optionA: 'Live on a space station orbiting Earth?',
+            optionB: 'Live in a biodome on Mars?',
+            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: 0, digital_detox_guru: -1 }
         },
         {
             id: 'tech_9',
-            optionA: 'Have the latest tech but it breaks often',
-            optionB: 'Have old reliable tech that always works',
-            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: -1, digital_detox_guru: 1 }
+            optionA: 'Live forever in a simulation?',
+            optionB: 'Have one real lifetime?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -2, digital_detox_guru: 1 }
         },
         {
             id: 'tech_10',
-            optionA: 'Live without social media',
-            optionB: 'Live without email',
+            optionA: 'Explore a planet with hostile AI?',
+            optionB: 'Explore one with deadly creatures?',
+            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: 0, digital_detox_guru: 0 }
+        },
+        {
+            id: 'tech_11',
+            optionA: 'Discover a wormhole to parallel universes?',
+            optionB: 'Find a portal to your own future?',
+            typePoints: { wifi_whisperer: 0, analog_angel: 0, update_dodger: 1, digital_detox_guru: 0 }
+        },
+        {
+            id: 'tech_12',
+            optionA: 'Explore an abandoned alien ship?',
+            optionB: 'Decrypt signals from a dying galaxy?',
+            typePoints: { wifi_whisperer: 1, analog_angel: 0, update_dodger: 0, digital_detox_guru: -1 }
+        },
+        {
+            id: 'tech_13',
+            optionA: 'Colonize a planet with strangers?',
+            optionB: 'Colonize with digital copies of old friends?',
+            typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 2 }
+        },
+        {
+            id: 'tech_14',
+            optionA: 'Let AI govern your country with perfect data precision?',
+            optionB: 'Keep flawed but democratically elected human leaders?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: 0 }
+        },
+        {
+            id: 'tech_15',
+            optionA: 'Have tech-regulated perfect emotions?',
+            optionB: 'Keep unpredictable human moods?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: -1, digital_detox_guru: -1 }
+        },
+        {
+            id: 'tech_16',
+            optionA: 'Speak every human language fluently?',
+            optionB: 'Communicate with any machine?',
+            typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 1 }
+        },
+        {
+            id: 'tech_17',
+            optionA: 'Trust a machine to raise your child?',
+            optionB: 'Trust one to care for you when old?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -2, update_dodger: 0, digital_detox_guru: -2 }
+        },
+        {
+            id: 'tech_18',
+            optionA: 'Have AI that predicts your decisions with 90% accuracy?',
+            optionB: 'Experience one day from any future year annually?',
+            typePoints: { wifi_whisperer: 2, analog_angel: -1, update_dodger: -1, digital_detox_guru: -1 }
+        },
+        {
+            id: 'tech_19',
+            optionA: 'Change your appearance instantly like changing clothes?',
+            optionB: 'Live half your waking hours in virtual reality?',
+            typePoints: { wifi_whisperer: 1, analog_angel: -2, update_dodger: 0, digital_detox_guru: -2 }
+        },
+        {
+            id: 'tech_20',
+            optionA: 'Master any skill daily but risk forgetting old ones?',
+            optionB: 'Visit your ancestors\' memories as a silent observer?',
+            typePoints: { wifi_whisperer: 1, analog_angel: 0, update_dodger: -1, digital_detox_guru: 0 }
+        },
+        {
+            id: 'tech_21',
+            optionA: 'Have a permanent AI companion that evolves with you?',
+            optionB: 'Replace your AI companion with newer models every 5 years?',
+            typePoints: { wifi_whisperer: 1, analog_angel: -2, update_dodger: 1, digital_detox_guru: -1 }
+        },
+        {
+            id: 'tech_22',
+            optionA: 'Control gravity in a small area around you?',
+            optionB: 'Talk to your younger self for 5 minutes yearly?',
+            typePoints: { wifi_whisperer: 0, analog_angel: 0, update_dodger: 1, digital_detox_guru: 1 }
+        },
+        {
+            id: 'tech_23',
+            optionA: 'Build a self-sustaining moon city?',
+            optionB: 'Create instant skill-sharing technology?',
+            typePoints: { wifi_whisperer: 1, analog_angel: -1, update_dodger: 0, digital_detox_guru: -1 }
+        },
+        {
+            id: 'tech_24',
+            optionA: 'Detect lies perfectly but only in one chosen person?',
+            optionB: 'Experience one day from any future century as visitor?',
+            typePoints: { wifi_whisperer: 0, analog_angel: 0, update_dodger: 1, digital_detox_guru: 0 }
+        },
+        {
+            id: 'tech_25',
+            optionA: 'Instantly grow any plant anywhere for food or resources?',
+            optionB: 'Access all possible inventions but build only one yearly?',
             typePoints: { wifi_whisperer: -1, analog_angel: 1, update_dodger: 0, digital_detox_guru: 2 }
         }
     ],

@@ -292,6 +292,11 @@ body {
 
 .header-stats {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
 .live-counter {
@@ -307,6 +312,65 @@ body {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Stats Button Styles */
+.stats-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 25px;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all var(--transition-slow);
+    opacity: 0;
+}
+
+.stats-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 0, 110, 0.2);
+}
+
+.stats-button:hover::before {
+    width: 200%;
+    height: 200%;
+    opacity: 0.1;
+}
+
+.stats-button:active {
+    transform: translateY(0);
+}
+
+/* Hide label on mobile for space */
+@media (max-width: 480px) {
+    .stats-button .stats-label {
+        display: none;
+    }
+    
+    .header-stats {
+        gap: var(--spacing-sm);
+    }
 }
 
 /* Games Container */

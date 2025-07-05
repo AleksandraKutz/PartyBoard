@@ -42,6 +42,11 @@
     flex: 1;
 }
 
+/* Ensure stats button in game header has same styling */
+.game-header .stats-button {
+    flex-shrink: 0;
+}
+
 .game-name {
     font-size: var(--font-size-lg);
     font-weight: 600;
